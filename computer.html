@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+
+<body>
+    <div style="width: 400px; height: 150px; margin: 50px auto;">
+        <h1>简易计算器</h1>
+        <input type="text" id="numA" value="" style="width: 50px;">
+        <select id="cs">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" id="numB" value="" style="width: 50px;">
+        <button id="btnA" onclick="compute();">=</button>
+        <span id="res">显示结果</span>
+    </div>
+
+    <script>
+        function compute() {
+            let n1 = document.getElementById('numA').value;
+            let n2 = document.getElementById('numB').value;
+            let c = document.getElementById('cs').value;
+
+            let num1 = parseFloat(n1);
+            let num2 = parseFloat(n2);
+            let result;
+
+            if (isNaN(num1) || isNaN(num2)) {
+                result = "错误：输入无效";
+            } else {
+                if (c === '+') {
+                    result = num1 + num2;
+                } else if (c === '-') {
+                    result = num1 - num2;
+                } else if (c === '*') {
+                    result = num1 * num2;
+                } else if (c === '/') {
+                    if (num2 === 0) {
+                        result = "错误：除以零";
+                    } else {
+                        result = num1 / num2;
+                    }
+                }
+            }
+
+            document.getElementById('res').innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>
