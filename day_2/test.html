@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>转置矩阵</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+
+    <script>
+        let res = [
+            ['a', 'b', 'c'],
+            ['d', 'e', 'f'],
+            ['g', 'h', 'i'],
+        ];
+        let obj = [[], [], []];
+        let str = ""; // 将 str 声明放在循环外部
+
+        // 转置矩阵
+        for (let i = 0; i < res.length; i++) {
+            for (let j = 0; j < res[i].length; j++) {
+                obj[j][i] = res[i][j];
+            }
+        }
+
+        // 格式化输出
+        for (let i = 0; i < obj.length; i++) {
+            let rowStr = "";
+            for (let j = 0; j < obj[i].length; j++) {
+                rowStr += obj[i][j];
+                if (j < obj[i].length - 1) {
+                    rowStr += ",";
+                }
+            }
+            console.log(rowStr);
+            document.write(rowStr + "<br>");
+        }
+    </script>
+
+</body>
+
+</html>

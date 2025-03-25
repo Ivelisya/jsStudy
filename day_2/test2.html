@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+
+    <script>
+        // 定义一个包含多个数字的数组
+        let arr = [12, 25, 27, 38, 24, 17, 19, 33, 666, 99, 223, 789]
+
+        // 冒泡排序算法：通过相邻元素比较和交换实现排序
+        // 外层循环控制排序轮数，每轮排序会将一个最大值移到末尾
+        for (let i = 0; i < arr.length; i++) {
+            // 内层循环进行相邻元素比较，注意j的上限随着i的增加而减少
+            // 因为每轮排序后末尾的i个元素已经排好序
+            for (let j = 0; j < arr.length - i - 1; j++) {
+                // 如果前一个元素大于后一个元素，则交换它们的位置
+                if (arr[j] > arr[j + 1]) {
+                    let temp = arr[j];  // 使用临时变量存储当前元素
+                    arr[j] = arr[j + 1];  // 将后一个元素赋值给当前位置
+                    arr[j + 1] = temp;  // 将临时变量的值赋给后一个元素位置
+                }
+            }
+        }
+        // 将排序后的数组输出到页面
+        console.log(arr);
+        document.write(arr);
+    </script>
+
+</body>
+
+</html>
