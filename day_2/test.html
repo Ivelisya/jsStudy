@@ -11,6 +11,7 @@
 <body>
 
     <script>
+        // 【数据定义】：定义原始矩阵和结果矩阵
         let res = [
             ['a', 'b', 'c'],
             ['d', 'e', 'f'],
@@ -19,14 +20,14 @@
         let obj = [[], [], []];
         let str = ""; // 将 str 声明放在循环外部
 
-        // 转置矩阵
+        // 【算法实现】：转置矩阵
         for (let i = 0; i < res.length; i++) {
             for (let j = 0; j < res[i].length; j++) {
                 obj[j][i] = res[i][j];
             }
         }
 
-        // 格式化输出
+        // 【输出处理】：格式化输出转置后的矩阵
         for (let i = 0; i < obj.length; i++) {
             let rowStr = "";
             for (let j = 0; j < obj[i].length; j++) {

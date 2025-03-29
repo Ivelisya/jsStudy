@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>JavaScript函数示例</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <div id="t">当前时间</div>
+
+    <script>
+        /** 声明圆周率常量 (普通函数可能需要) */
+        const PI = 3.1415926;
+
+        /**
+         * 【普通函数】：计算并返回指定半径的圆的面积
+         * 特点：具有明确的输入（参数）和输出（返回值），执行特定任务。
+         * @param {number} r - 圆的半径
+         * @returns {number} 圆的面积
+         */
+        function computeCArea(r) {
+            if (typeof r !== 'number' || r < 0) {
+                console.error("请输入有效的半径值。");
+                return NaN; // 返回非数字表示无效输入
+            }
+            let s = PI * r * r;
+            return s;
+        }
+
+        /**
+         * 【回调函数示例】：显示当前时间，并将自身作为回调传递给setTimeout
+         * 特点：showTime 本身是一个普通函数，但它作为参数传递给 `setTimeout`。
+         * `setTimeout` 在指定延迟后执行这个（回调）函数。
+         */
+        function showTime() {
+            let dt = new Date();
+            let timeElement = document.getElementById("t");
+            if (timeElement) {
+                // 使用 toLocaleTimeString 获取本地格式的时间字符串
+                timeElement.innerHTML = "当前时间：" + dt.toLocaleTimeString();
+            }
+            // 将函数引用 showTime 作为回调传递给 setTimeout
+            // 这会在 1000 毫秒（1秒）后再次调用 showTime
+            setTimeout(showTime, 1000);
+        }
+
+        // 初始调用一次以启动时间显示
+        showTime();
+
+        /**
+         * 【闭包函数】：外部函数 createCounter 返回内部函数 counter。
+         * 内部函数 counter 可以访问并修改外部函数作用域中的变量 `i`。
+         * 特点：即使外部函数 createCounter 执行完毕，返回的 counter 函数仍然能"记住"并访问其创建时的词法环境（包括变量 i）。
+         * @returns {function} 返回一个计数器函数
+         */
+        function createCounter() {
+            let i = 0; // 这个变量被闭包捕获
+
+            // 这是内部函数，它形成了闭包
+            function counter() {
+                i++; // 访问并修改外部函数的变量 i
+                console.log("计数值: " + i); // 使用 console.log 输出，避免干扰页面
+                return i; // 可以选择返回当前值
+            }
+
+            return counter; // 返回内部函数
+        }
+
+        // --- 使用示例 (可选，用于演示如何调用这些函数) ---
+
+        // 调用普通函数
+        let radius = 5;
+        let area = computeCArea(radius);
+        console.log(`半径为 ${radius} 的圆面积是: ${area}`); // 输出: 半径为 5 的圆面积是: 78.539815
+
+        // 调用闭包函数
+        let myCounter1 = createCounter(); // 创建第一个计数器实例
+        myCounter1(); // 输出: 计数值: 1
+        myCounter1(); // 输出: 计数值: 2
+
+        let myCounter2 = createCounter(); // 创建第二个独立的计数器实例
+        myCounter2(); // 输出: 计数值: 1 (与 myCounter1 的 i 是独立的)
+
+        // 回调函数 showTime() 已经在上面通过 showTime(); 启动了
+
+    </script>
+</body>
+
+</html>

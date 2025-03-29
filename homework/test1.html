@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>面向对象示例</title>
+</head>
+
+<body>
+    <script>
+        // 【对象定义】：创建一个学生对象，包含基本属性和say方法
+        var stu = {
+            "name": "张三",
+            "age": 20,
+            "sex": "男",
+            "say": function () {  // 【对象方法】：对象内的函数被称为方法
+                // 使用 console.log 代替 alert，输出更方便
+                console.log('我是' + this.name + '今年' + this.age + '岁，是' + this.sex + '生');
+            }
+        };
+        stu.say();
+        stu.name = "漳毓";
+        stu.age = 20;
+        stu.say(); // 再次执行对象的方法，查看修改后的结果
+        var clsOne = {
+            "name": "前端",
+            "peoples": 36,
+            // 【数组属性】：对象可以包含数组属性
+            "students": [
+                {
+                    // 【嵌套对象】：数组中的元素是对象
+                    "name": "张三",
+                    "age": 20,
+                    "sex": "男",
+                    "say": function () {  // 【对象方法】
+                        console.log('我是' + this.name + '今年' + this.age + '岁，是' + this.sex + '生');
+                    }
+                }, {
+                    // 【嵌套对象】：数组中的另一个对象
+                    "name": "李四",
+                    "age": 20,
+                    "sex": "女",
+                    "say": function () {  // 【对象方法】
+                        console.log('我是' + this.name + '今年' + this.age + '岁，是' + this.sex + '生');
+                    }
+                }
+            ]
+        };
+
+        console.log(clsOne.name + "班有" + clsOne.peoples + "人");
+        console.log('他们分别是');
+        for (var i = 0; i < clsOne.students.length; i++) {
+            console.log(clsOne.students[i].name);
+        }
+    </script>
+</body>
+
+</html>
