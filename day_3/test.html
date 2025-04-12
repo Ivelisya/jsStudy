@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留言板</title>
+    <style>
+        #dm {
+            width: 600px;
+            height: 500px;
+            margin: 50px auto;
+        }
+
+        #dw {
+            width: 598px;
+            height: 300px;
+            border: 1px solid gray;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div id="dm">
+        <div id="dw">
+            <ul id="uw">
+
+            </ul>
+
+        </div>
+        <div style="width: 400px;height: 100px;margin: 30px auto;">
+            <textarea id="txtw" rows="3" cols="40" placeholder="请输入留言内容"></textarea><br>
+
+            </textarea><br>
+        </div>
+        <p>
+            <button id="btn" style="width: 150px;height: 22px;margin-left: 180px;">发布</button></b>
+        </p>
+
+
+    </div>
+    <script>
+        var btnA = document.getElementById("btn");//命令按钮对象
+        var editor = document.getElementById("txtw");//编辑器元素对象
+        var ul = document.getElementById("uw");//获取无序列表元素对象
+
+        btnA.onclick = function () {
+            var li = document.createElement("li");//创建一个列表项
+            ul.insertBefore(li, ul.firstChild);//将列表项插入到列表的最前面
+            // li.innerHTML = editor.value;
+            let sp = document.createElement("span");//创建一个span元素
+            sp.innerText = editor.value;//设置span元素的内容为编辑器的值
+            li.appendChild(sp);//将span元素添加到列表项中
+
+            let btnDel = document.createElement("button");//创建一个删除按钮
+            btnDel.innerText = "删除";//设置按钮的文本为“删除”
+            btnDel.style.backgroundColor = "red";//设置按钮的背景颜色为红色
+            btnDel.style.float = 'right';
+            li.appendChild(btnDel);//将删除按钮添加到列表项中
+            btnDel.onclick = function () {//为删除按钮添加点击事件
+                ul.removeChild(this.parentNode);//删除列表项
+            };
+
+            editor.value = "";//清空编辑器内容
+
+        }
+    </script>
+
+
+
+</body>
+
+</html>
