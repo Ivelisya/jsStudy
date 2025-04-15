@@ -1,0 +1,313 @@
+/* 基础样式重置 */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-width: 1000px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+body {
+    position: relative;
+    background: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 主容器 */
+#wrapper {
+    min-height: 100%;
+    position: relative;
+    min-width: 1250px;
+}
+
+.wrapper_l #head {
+    padding-top: 40px;
+    text-align: center;
+}
+
+/* 顶部导航 */
+#head_wrapper {
+    position: relative;
+    height: 40px;
+}
+
+#u1 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 299;
+    height: 40px;
+    line-height: 40px;
+    padding-right: 15px;
+}
+
+#u1 a.mnav {
+    color: #222;
+    margin-left: 20px;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+#u1 a.mnav:hover {
+    color: #315efb;
+}
+
+.s-top-login-btn {
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 13px;
+    color: #fff;
+    background: #4e71f2;
+    padding: 0 12px;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 6px;
+}
+
+.s-bri {
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 13px;
+    color: #222;
+}
+
+/* Logo */
+.s_lg_img_new {
+    position: static;
+    margin: 0 auto 22px;
+    width: 270px;
+    height: 129px;
+}
+
+/* 搜索区域 */
+#search {
+    margin: 0 auto;
+    width: 654px;
+    padding-left: 7px;
+    position: relative;
+}
+
+.s_ipt_wr {
+    display: inline-block;
+    border: 2px solid #c4c7ce;
+    border-radius: 10px 0 0 10px;
+    background: #fff;
+    vertical-align: top;
+    width: 539px;
+    height: 44px;
+    border-right: 0;
+}
+
+.s_ipt_wr.focus {
+    border-color: #4e71f2;
+}
+
+.s_ipt {
+    width: 500px;
+    height: 22px;
+    font: 16px/22px arial;
+    padding: 11px 0;
+    margin: 0;
+    border: 0;
+    vertical-align: top;
+    outline: none;
+    box-shadow: none;
+    text-indent: 10px;
+}
+
+.s_btn_wr {
+    display: inline-block;
+    background-color: #4e71f2;
+    border-radius: 0 10px 10px 0;
+    vertical-align: top;
+    width: 108px;
+    height: 44px;
+    border: 0;
+}
+
+.s_btn {
+    width: 108px;
+    height: 44px;
+    font-size: 17px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* 快速删除按钮 */
+.quickdelete {
+    position: absolute;
+    right: 123px;
+    top: 14px;
+    width: 16px;
+    height: 16px;
+    background: url(https://www.baidu.com/img/flexible/delete-2x.png) no-repeat;
+    background-size: 16px 16px;
+}
+
+/* 语音图像搜索按钮 */
+.soutu-btn {
+    position: absolute;
+    right: 140px;
+    top: 14px;
+    width: 18px;
+    height: 16px;
+    background: url(https://www.baidu.com/img/flexible/camera-2x.png) no-repeat;
+    background-size: 18px 16px;
+    cursor: pointer;
+}
+
+/* 热搜区域 */
+.s-hotsearch {
+    margin-top: 15px;
+    text-align: left;
+    width: 654px;
+}
+
+.hot-title {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.hot-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hot-item {
+    display: inline-block;
+    margin: 0 8px 8px 0;
+    padding: 0 12px;
+    background: #f5f5f6;
+    border-radius: 6px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.hot-label {
+    color: #f63;
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+/* AI搜索DeepSeek提示条 */
+.s-bottom-ctner {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.promo-banner-wrapper {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #f5f5f6;
+    border-radius: 16px;
+}
+
+.promo-banner-link {
+    color: #222;
+    font-size: 13px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.promo-icon {
+    display: inline-block;
+    background: url(https://www.baidu.com/img/flexible/ai-logo-2x.png) no-repeat;
+    background-size: 16px 16px;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.promo-arrow {
+    margin-left: 5px;
+}
+
+/* 二维码 */
+.qrcode-wrapper {
+    position: absolute;
+    right: 25px;
+    bottom: 125px;
+    z-index: 299;
+}
+
+.qrcode-icon {
+    width: 60px;
+    height: 60px;
+    background: url(https://www.baidu.com/img/flexible/qrcode-icon-2x.png) no-repeat;
+    background-size: 60px 60px;
+    cursor: pointer;
+}
+
+.qrcode-hover {
+    display: none;
+    position: absolute;
+    right: 70px;
+    bottom: 0;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.qrcode-icon:hover .qrcode-hover {
+    display: block;
+}
+
+.qrcode-container img {
+    width: 140px;
+    height: 140px;
+}
+
+.qrcode-container p {
+    margin: 5px 0 0;
+    font-size: 13px;
+    color: #222;
+}
+
+/* 页脚样式 */
+#ftCon {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    height: 42px;
+    text-align: center;
+}
+
+.foot-inner {
+    font-size: 12px;
+    color: #9195A3;
+}
+
+.foot-inner a {
+    color: #9195A3;
+    margin: 0 12px;
+}
+
+.foot-pipe {
+    color: #d0d0d0;
+}
+
+.cp-text {
+    margin-top: 8px;
+}
+
+.cp-text a {
+    margin: 0 4px;
+}

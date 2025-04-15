@@ -1,0 +1,198 @@
+/* --- 基本重置和全局 (部分来自百度源码或模拟) --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 12px; /* 百度基础字号 */
+    background-color: #fff;
+}
+#wrapper {
+    position: relative; /* 相对定位基础 */
+    min-height: 100vh; /* 至少撑满视窗高度 */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 水平居中内容 */
+    padding-top: 100px; /* 调整内容距离顶部的距离 */
+    box-sizing: border-box;
+}
+#head {
+    width: 100%;
+    max-width: 1000px; /* 限制头部最大宽度 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+p, form, ol, ul, li, dl, dt, dd, h3 { margin: 0; padding: 0; list-style: none; }
+input { padding-top: 0; padding-bottom: 0; box-sizing: border-box; }
+img { border: 0; }
+a { text-decoration: none; color: #00c; } /* 百度默认链接颜色 */
+a:hover { text-decoration: underline; }
+
+/* --- Logo --- */
+.s_lg_img_new {
+    display: block; /* 或者 inline-block */
+    margin-bottom: 25px; /* Logo 和搜索框间距 */
+    text-align: center;
+}
+.s_lg_img_new img {
+    /* 尺寸已在 HTML 中设置 */
+}
+
+/* --- 搜索表单 --- */
+#search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.fm {
+    width: 641px; /* 搜索框整体宽度 (输入框+按钮) */
+    height: 40px; /* 搜索框高度 */
+    display: flex;
+    position: relative; /* 用于内部绝对定位元素 */
+}
+
+/* 输入框包裹 */
+.s_ipt_wr {
+    display: inline-block; /* 或者 flex-grow: 1; */
+    flex: 1; /* 占据大部分空间 */
+    height: 100%;
+    border: 1px solid #c4c7ce;
+    border-right: none; /* 右边框由按钮提供 */
+    background-color: #fff;
+    border-radius: 10px 0 0 10px; /* 左侧圆角 */
+    position: relative; /* 用于定位内部图标 */
+    vertical-align: top; /* 保证对齐 */
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.fm:hover .s_ipt_wr, .fm:focus-within .s_ipt_wr { /* 悬停或聚焦时 */
+    border-color: #a7aab0;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+}
+.fm:focus-within .s_ipt_wr { /* 仅聚焦时 */
+    border-color: #4e6ef2;
+    box-shadow: 0 1px 6px rgba(78, 110, 242, 0.2);
+}
+
+/* 输入框 */
+.s_ipt {
+    width: 100%;
+    height: 22px; /* 实际输入区域高度 */
+    line-height: 22px;
+    margin: 9px 0 9px 16px; /* 上下居中，左侧留白 */
+    padding: 0;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    color: #222;
+    position: relative; /* 确保在其他元素之上 */
+    z-index: 1;
+    padding-right: 50px; /* 给右侧图标留出空间 */
+    box-sizing: content-box; /* 保持与百度一致的盒模型计算 */
+}
+
+/* 摄像头/图片搜索按钮 */
+.soutu-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 16px;
+    background: url('https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/searchbox/search_camera_icon_1efb60b.png') no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    z-index: 2; /* 在输入框之上 */
+}
+.soutu-btn:hover {
+    opacity: 1;
+}
+
+/* 快速删除按钮 (默认隐藏) */
+.quickdelete {
+    position: absolute;
+    top: 12px; /* 微调位置 */
+    right: 35px; /* 在摄像头左侧 */
+    width: 14px;
+    height: 14px;
+    background: url('https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/searchbox/delete_8bf3a9d.png') no-repeat;
+    cursor: pointer;
+    display: none; /* JS 控制显示 */
+    z-index: 2;
+}
+
+/* 按钮包裹 */
+.s_btn_wr {
+    display: inline-block;
+    width: 100px; /* 按钮宽度 */
+    height: 100%;
+    border-radius: 0 10px 10px 0; /* 右侧圆角 */
+    background-color: #4e6ef2; /* 按钮背景色 */
+    vertical-align: top; /* 保证对齐 */
+    overflow: hidden; /* 隐藏内部可能溢出的部分 */
+    position: relative; /* 确保层级 */
+    z-index: 0; /* 在输入框包裹层之下，但按钮本身在之上 */
+    transition: background-color 0.1s ease;
+}
+.s_btn_wr:hover {
+    background-color: #4662d6;
+}
+
+/* 按钮 */
+.s_btn {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: none; /* 背景由包裹层提供 */
+    color: white;
+    font-size: 17px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    outline: none;
+}
+
+/* --- AI 搜索 DeepSeek 提示条 (样式复用之前的，微调) --- */
+.s-bottom-ctner {
+    text-align: center; /* 居中链接 */
+    margin-top: 20px; /* 与搜索框的间距 */
+}
+.promo-banner-wrapper {
+    display: inline-block; /* 让背景适应内容宽度 */
+}
+.promo-banner-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    background-color: #f0f6ff;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #3164c0;
+    transition: background-color 0.2s ease;
+}
+.promo-banner-link:hover {
+    background-color: #e5efff;
+    text-decoration: none; /* 悬停时也无下划线 */
+}
+.promo-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    background: url('data:image/svg+xml;utf8,<svg t="1689750015131" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4831" width="16" height="16"><path d="M1005.312 914.752l-198.592-198.592c-8.832-8.832-23.232-8.832-32 0-117.888 117.888-308.992 117.888-426.88 0-117.888-117.888-117.888-308.992 0-426.88 117.888-117.888 308.992-117.888 426.88 0 8.832 8.832 8.832 23.232 0 32l198.592 198.592c4.416 4.416 6.656 10.24 6.656 16s-2.24 11.584-6.656 16c-8.832 8.832-23.232 8.832-32 0zM665.6 665.6c-88.32 88.32-231.808 88.32-320.128 0-88.32-88.32-88.32-231.808 0-320.128 88.32-88.32 231.808-88.32 320.128 0 88.32 88.32 88.32 231.808 0 320.128z" fill="%234e6ef2" p-id="4832"></path></svg>') no-repeat center center;
+    background-size: contain;
+}
+.promo-arrow {
+    margin-left: 6px;
+    font-weight: bold;
+    color: #4e6ef2;
+}
+
+/* --- 辅助类 (来自百度源码片段) --- */
+.bg { /* 用于背景图的通用类 */
+    background-image: url(https://www.baidu.com/img/baidu_jgylogo3.gif); /* 实际会用雪碧图 */
+    background-repeat: no-repeat;
+}
+

@@ -1,4 +1,127 @@
 <!DOCTYPE html>
-<html>
-    
+<!--STATUS OK-->
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>百度一下，你就知道</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://www.baidu.com/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://www.baidu.com/favicon.ico" type="image/x-icon">
+</head>
+
+<body class="pc">
+
+    <div id="wrapper" class="wrapper_l">
+        <!-- 顶部导航区域 -->
+        <div id="head_wrapper">
+            <div id="u1">
+                <a href="https://voice.baidu.com/act/newpneumonia/newpneumonia/"
+                    class="mnav c-font-normal c-color-t">抗疫</a>
+                <a href="http://news.baidu.com/" class="mnav c-font-normal c-color-t">新闻</a>
+                <a href="https://www.hao123.com/" class="mnav c-font-normal c-color-t">hao123</a>
+                <a href="http://map.baidu.com/" class="mnav c-font-normal c-color-t">地图</a>
+                <a href="https://tieba.baidu.com/" class="mnav c-font-normal c-color-t">贴吧</a>
+                <a href="https://xueshu.baidu.com/" class="mnav c-font-normal c-color-t">学术</a>
+                <a href="https://passport.baidu.com/v2/?login&tpl=mn" class="s-top-login-btn c-btn c-btn-primary">登录</a>
+                <a href="//www.baidu.com/more/" class="s-bri">设置</a>
+            </div>
+        </div>
+
+        <div id="head" class="s-skin-container">
+            <!-- Logo -->
+            <div class="s_lg_img_new">
+                <img src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" width="270" height="129"
+                    alt="百度" usemap="#mp">
+                <map name="mp" id="s_lg_map">
+                    <area shape="rect" coords="0,0,270,129" href="//www.baidu.com/" title="百度首页">
+                </map>
+            </div>
+
+            <!-- 搜索表单 -->
+            <div id="search" class="s-center-box">
+                <form id="form" name="f" action="https://www.baidu.com/s" class="fm">
+                    <input type="hidden" name="ie" value="utf-8">
+                    <input type="hidden" name="f" value="8">
+                    <input type="hidden" name="rsv_bp" value="1">
+                    <input type="hidden" name="ch" value="">
+                    <input type="hidden" name="tn" value="baidu">
+
+                    <span class="bg s_ipt_wr">
+                        <input id="kw" name="wd" class="s_ipt" value="" maxlength="255" autocomplete="off">
+                        <a href="javascript:;" id="quickdelete" class="quickdelete" style="display: none;"></a>
+                        <span class="soutu-btn"></span>
+                    </span>
+
+                    <span class="bg s_btn_wr">
+                        <input type="submit" id="su" value="百度一下" class="bg s_btn">
+                    </span>
+
+                    <div id="s-hotsearch" class="s-hotsearch">
+                        <h3 class="hot-title">热搜</h3>
+                        <ul class="hot-list">
+                            <li class="hot-item">
+                                <a class="c-font-medium c-color-t" href="#">全国核酸检测需求大幅下降</a>
+                                <span class="hot-label">热</span>
+                            </li>
+                            <li class="hot-item">
+                                <a class="c-font-medium c-color-t" href="#">新冠疫情正在腾退</a>
+                            </li>
+                            <!-- 更多热搜项... -->
+                        </ul>
+                    </div>
+                </form>
+            </div>
+
+            <!-- AI 搜索 DeepSeek 提示条 -->
+            <div class="s-bottom-ctner">
+                <div class="promo-banner-wrapper">
+                    <a href="#" class="promo-banner-link">
+                        <span class="promo-icon"></span>
+                        AI搜索DeepSeek 今日已解决2440789个问题
+                        <span class="promo-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右下角二维码和内容 -->
+        <div class="qrcode-wrapper">
+            <div class="qrcode-icon">
+                <div class="qrcode-hover">
+                    <div class="qrcode-container">
+                        <img src="//www.baidu.com/img/flexible/wm-2x.png" alt="百度APP扫码">
+                        <p>百度APP扫一扫</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <div id="ftCon">
+            <div class="foot-inner">
+                <p class="lh">
+                    <a href="https://www.baidu.com/cache/sethelp/help.html" target="_blank">把百度设为主页</a>
+                    <span class="foot-pipe">|</span>
+                    <a href="https://home.baidu.com/" target="_blank">关于百度</a>
+                    <span class="foot-pipe">|</span>
+                    <a href="https://ir.baidu.com/" target="_blank">About Baidu</a>
+                    <span class="foot-pipe">|</span>
+                    <a href="https://www.baidu.com/duty/" target="_blank">使用百度前必读</a>
+                    <span class="foot-pipe">|</span>
+                    <a href="https://help.baidu.com/" target="_blank">帮助中心</a>
+                </p>
+                <p class="cp-text">©2023 Baidu <a href="https://www.baidu.com/duty/copyright.html">使用百度前必读</a> <a
+                        href="https://www.baidu.com/duty/baidu_corporation.html">京ICP证030173号</a> <a id="jgwab"
+                        href="http://www.beian.gov.cn/portal/registerSystemInfo">京公网安备11000002000001号</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
 </html>
