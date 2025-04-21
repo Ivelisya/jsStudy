@@ -1,0 +1,322 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 14px;
+    background-color: #fff;
+    /* Baidu background is white */
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    align-items: center;
+    /* Center items horizontally */
+    padding-top: 60px;
+    /* Add some space at the top */
+    min-height: 100vh;
+    /* Ensure body takes full height */
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* Take full width for centering children */
+}
+
+
+.logo {
+    margin-bottom: 25px;
+    /* Space below logo */
+}
+
+.logo img {
+    /* Adjust width as needed, 270px is common for Baidu */
+    width: 270px;
+    /* height: 129px; */
+    /* Maintain aspect ratio if needed */
+    display: block;
+    /* Remove extra space below image */
+}
+
+.search-wrapper {
+    margin-bottom: 20px;
+    /* Space below search bar */
+    width: 648px;
+    /* Match hot search width + borders */
+}
+
+.search-box {
+    display: flex;
+    /* Align input and button */
+    align-items: center;
+    /* Vertically center */
+    position: relative;
+    /* For absolute positioning of camera icon */
+    width: 100%;
+    border: 1px solid #ccc;
+    /* Border around the whole box */
+    border-radius: 10px;
+    /* Rounded corners for the container */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    /* Subtle shadow */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.search-box:hover,
+.search-box:focus-within {
+    /* Style when hovered or input is focused */
+    border-color: #a0a0a0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+.search-input {
+    flex-grow: 1;
+    /* Take available space */
+    height: 44px;
+    /* Match button height */
+    padding: 12px 45px 12px 16px;
+    /* Top/Bottom, Right (for icon), Left */
+    font-size: 16px;
+    border: none;
+    /* Remove individual border */
+    border-radius: 10px 0 0 10px;
+    /* Keep left rounding */
+    outline: none;
+    /* Remove default focus outline */
+    color: #222;
+    background: transparent;
+    /* Inherit background */
+    box-sizing: border-box;
+    /* Include padding in height */
+}
+
+.soutu-btn {
+    position: absolute;
+    right: 115px;
+    /* Position relative to the right edge of search-box */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    /* Icon size */
+    height: 24px;
+    /* Icon size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    /* Icon color */
+    cursor: pointer;
+    font-size: 18px;
+    /* Adjust icon size */
+}
+
+.soutu-btn:hover {
+    color: #4e6ef2;
+    /* Baidu blue on hover */
+}
+
+
+.search-button {
+    cursor: pointer;
+    width: 108px;
+    height: 44px;
+    line-height: 44px;
+    padding: 0;
+    background-color: #4e6ef2;
+    border: none;
+    /* Remove individual border */
+    border-radius: 0 10px 10px 0;
+    /* Keep right rounding */
+    font-size: 17px;
+    color: #fff;
+    font-weight: 400;
+    outline: none;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.search-button:hover {
+    background-color: #4662d6;
+    /* Slightly darker blue on hover */
+}
+
+.new_search_guide_bub_container_center {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 25px;
+    height: 32px;
+    letter-spacing: 0;
+    text-align: center;
+    background: #f5f5f6;
+    color: #333;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    margin: 15px 0 25px;
+    cursor: pointer;
+    width: auto;
+    max-width: 450px;
+}
+
+.ai-icon {
+    color: #4e6ef2;
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+.ai-arrow {
+    color: #4e6ef2;
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+
+/* Hot Search Styles */
+.hot-search-container {
+    width: 650px;
+    background-color: #fff;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 15px 0;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+}
+
+.hot-search-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 15px;
+}
+
+.hot-search-tabs {
+    display: flex;
+    align-items: center;
+}
+
+.s-menu-item {
+    font-size: 14px;
+    margin-right: 25px;
+    color: #666;
+    cursor: pointer;
+    padding-bottom: 10px;
+    position: relative;
+    transition: color 0.2s ease-in-out;
+}
+
+.s-menu-item:hover {
+    color: #222;
+}
+
+.s-menu-item.current {
+    color: #222;
+    font-weight: 600;
+}
+
+.s-menu-item-underline {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+}
+
+.s-menu-item.current .s-menu-item-underline {
+    background-color: #4e6ef2;
+}
+
+.hot-search-content ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    column-count: 2;
+    column-gap: 40px;
+    position: relative;
+}
+
+.hot-search-content li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    break-inside: avoid-column;
+    page-break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+}
+
+.hot-search-content li a {
+    color: #333;
+    text-decoration: none;
+    flex-grow: 1;
+    margin-left: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.2s ease-in-out;
+}
+
+.hot-search-content li a:hover {
+    color: #4e6ef2;
+    text-decoration: underline;
+}
+
+.rank {
+    font-size: 14px;
+    font-weight: 400;
+    width: 18px;
+    text-align: center;
+    flex-shrink: 0;
+    line-height: 1.4;
+}
+
+/* Rank colors */
+.rank-top {
+    display: inline-block;
+    background-color: #f5f5f6;
+    color: #999;
+    font-size: 12px;
+    padding: 0px 4px;
+    border-radius: 2px;
+    width: auto;
+}
+
+.rank-1,
+.rank-2,
+.rank-3 {
+    color: #fe2d46;
+    font-weight: 600;
+}
+
+.rank-other {
+    color: #999;
+}
+
+.tag {
+    font-size: 12px;
+    color: white;
+    padding: 1px 4px;
+    border-radius: 2px;
+    margin-left: 6px;
+    line-height: 1.3;
+    flex-shrink: 0;
+    font-weight: normal;
+}
+
+.tag-hot {
+    background-color: #ff9400;
+}
+
+.tag-new {
+    background-color: #ff4f4f;
+}
