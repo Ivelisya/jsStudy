@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>input标签</title>
+</head>
+<!-- 
+    input标签 
+        type 元素的类型
+        常用类型
+            text 文本框
+            password 密码框
+            radio 单选框
+            checkbox 多选框
+            file 文件上传框
+            hidden 隐藏域 该元素不会被用户看到 但是会提交到服务器上 想要提交数据 但是又不想被用户看到
+            button 按钮
+            submit 提交按钮 提交表单的按钮 默认类型是submit
+            reset 重置按钮 重置表单的按钮 默认类型是reset 
+        value 提交表单时的值 该值会被提交到服务器上 该值会被浏览器缓存
+        readonly 只读属性
+        maxlength 最大长度属性 该属性限制了输入框的最大长度 该属性只对文本框和密码框有效
+        注意:
+            1.单选框需要通过name属性来分组 例如 name
+            2.如果上传文件的表单，则表单需要设置一个属性 enctype="multipart/form-data" 否则无法上传文件
+    -->
+
+<body>
+    文本框:<input type="text" name="username" value="123" /><br />
+    文本框:<input type="text" name="username" value="123" readonly="readonly" /><br />
+    文本框:<input type="text" name="username" value="123" disabled="disabled"><br />
+    <!-- input是行内标签元素 所以需要手动换行 -->
+    密码框:<input type="password" name="password" value="123" /><br />
+    单选框:<input type="radio" value="man" name="sex"> 男<input type="radio" value="woman" name="sex"> 女 <br>
+    复选框:<input type="checkbox" value="1" name="sex"> 男<input type="checkbox" value="2" name="sex"> 女<br />
+    <!-- 如果file放在表单当中 表单应该设置属性 enctype = "multipart/form-data" -->
+    文件域:<input type="file" name="file" /><br />
+    <!-- 看不到但会存数据 -->
+    隐藏域:<input type="hidden" name="hidden" value="123" /><br />
+    普通按钮:<input type="button" value="普通按钮" /><br />
+    提交按钮:<input type="submit" value="提交按钮" /><br />
+    <form action="" method="get">
+        文本框:<input type="text" name="username" value="123" /><br />
+        提交按钮:<input type="submit" value="提交按钮" /><br />
+        重置按钮:<input type="reset" value="重置按钮" /><br />
+        日期框:<input type="date" name="date" /><br />
+    </form>
+</body>
+
+</html>

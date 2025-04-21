@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+</head>
+<!-- 
+    所有标签都有的属性
+    id 唯一标识符
+    name 用于提交数据时的参数名 name: input name="username" 提交后会变成 name:"username"
+    style 属性 设置元素的样式 设置元素的行内样式
+    class 设置元素的样式名
+
+表单
+    form
+        表单需要结合表单元素一起使用
+        表单用于向服务器传输数据。form元素是块级元素，其前后会产生换行
+        表单提交时必须设置表单元素的name属性值 否则无法获取数据
+        常用属性
+            action 提交表单的地址
+            method 提交方式 get post
+            target 提交数据时打开窗口的方式 self blank parent top
+        get与post请求的区别
+            get请求会将数据拼接在url后面 例如 http://www.baidu.com?name=zhangsan&age=18
+            post请求会将数据放在请求体中 例如 http://www.baidu.com
+            get请求的参数会被浏览器缓存 post不会
+            get请求的参数长度有限制 post没有限制
+            get请求不安全 post相对安全
+
+            get请求比post请求快 大概是两倍左右
+            get请求有缓存(会将数据放在浏览器中) 而post请求无缓存
+-->
+
+<body>
+    <form action="https//www.baidu.com" method = get target="_blank">
+        姓名:<input type="text" name="name" />
+        <button>提交</button>
+    </form>
+</body>
+
+</html>

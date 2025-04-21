@@ -23,14 +23,23 @@
         css样式
             border-collapse:collapse; 边框折叠方式 折叠 表示边框合并
 
+            合并单元格
+                <td> 和 <th>的colspan和rowspan属性
+                    rowspan 纵向合并
+                    colspan 横向合并
+                    span -> 跨越的意思
+                    rowspan 跨越行数
+                    colspan 跨越列数
+                    例如：<td colspan = "2">表示横向合并两列 因为跨越两列
         tr常用属性
-            align 每行中文本内容的对齐方式(left right center)
-            valign 每行中单元格的对齐方式(top middle bottom) vertical alignment
+            align 水平方向 每行中文本内容的对齐方式(left right center)
+            valign 垂直方向 每行中单元格的对齐方式(top middle bottom) vertical alignment
+
 -->
 
 <body>
     <table border="1" width="500px" align="center" style="border-collapse: collapse">
-        <tr align = "center">
+        <tr align="center">
             <!--  tr table row 表格行-->
             <!--  th 表格标题-->
             <th>班级</th>
@@ -38,14 +47,13 @@
             <th>性别</th>
             <th>年龄</th>
         </tr>
-        <tr align = "left">
-            <td>前端班</td>
+        <tr align="left">
+            <td rowspan="2">前端班</td>
             <td>小明</td>
             <td>男</td>
             <td>18</td>
         </tr>
-        <tr align = "right">
-            <td>前端班</td>
+        <tr align="right" bgcolor="pink">
             <td>小明</td>
             <td>男</td>
             <td>18</td>
