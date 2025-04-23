@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>基本选择器</title>
+    <style type="text/css">
+        /* 通用选择器 
+            * 选择器可以选择所有的元素
+                *{
+                    属性:属性值;
+                }
+        
+        
+        */
+        * {
+            color: red;
+            font-size: 20px;
+            background-color: #ccc;
+        }
+
+        /*
+            元素选择器/标签选择器
+                选择指定元素/标签
+                标签名{
+                    属性:属性值;
+                }
+        */
+        /*
+            id选择器
+                选择指定id属性值的元素
+                #id属性值{
+                    属性:属性值;
+                }
+                id定义规则:以字母数字下划线中划线组成，不要以数字开头
+        */
+
+        /*
+            class类选择器 .
+            选择设置指定class的属性值
+            .class{
+                属性:属性值;
+            }
+        */
+        div {
+            width: 100px;
+            /*div的宽度*/
+            height: 100px;
+            background-color: #d818188f;
+        }
+
+        #div1 {
+            background-color: green;
+        }
+
+        .cls1 {
+            font-weight: bold;
+            ;
+        }
+
+        /* 
+            群组选择器
+                选择指定选择器选中的元素
+                选择器1,选择器2{
+                    属性:属性值;
+                }
+                多个选择器以,隔开
+     */
+        #div1,.cls1,p{
+            /* 边框 边框的粗细 边框的风格 边框的颜色 */
+            border:1px solid red;
+        }
+    </style>
+</head>
+<!-- 
+    选择器的优先级
+        id选择器 > class选择器 > 标签选择器 > 通用选择器
+        id选择器 100 类选择器10 标签选择器1 通用选择器0
+        行内样式 1000
+-->
+<body>
+    <div class="cls1">div1</div>
+    <div id="div1">div2</div>
+    <div class="cls1">div3</div>
+    <br>
+    123
+    <!-- id最好保持唯一 -->
+    <p>p</p>
+</body>
+
+</html>

@@ -2,8 +2,12 @@
 <html>
 
 <head>
+
     <meta charset="UTF-8">
     <title>css的基础语法和样式</title>
+    <style type="text/css">
+        /* 内部样式 */
+    </style>
     <!-- 
         css的使用
         1.行内样式
@@ -13,11 +17,19 @@
             <style type="text/css">样式</style>
         3.外部样式
             <link rel="stylesheet" type="text/css" href="css文件路径"> 
+        css的优先级 就近原则 行内样式的优先级最高
    -->
+    <link rel="stylesheet" type="text/css" href="css/style_1.css">
+    <!-- 
+    <link rel="stylesheet" type="text/css" href="css/style_1.css">
+            rel 当前文件与引入文件之间的关系
+            type:文件类型
+            href:引入文件的路径
+    -->
 </head>
 
 <body>
-    <p style = "color:red;font-family: 楷体;" >这是一行文本</p>
+    <p style="color:red;font-family: 楷体;">这是一行文本</p>
 </body>
 
 </html>

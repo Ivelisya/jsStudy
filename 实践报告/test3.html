@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dm {
+            width: 350px;
+            height: 80px;
+            background-color: black;
+            margin: 100px auto;
+        }
+
+        #dm div {
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            float: left;
+            margin: 10px 10px;
+            background-color: white;
+        }
+
+        #dm #dt {
+            width: 60px;
+            height: 30px;
+            border-radius: 3px;
+            color: white;
+            background-color: black;
+            margin: 20px 10px;
+            font-size: 20pt;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dm">
+        <div id="dr"></div>
+        <div id="dy"></div>
+        <div id="dg"></div>
+        <div id="dt">30</div>
+    </div>
+    <script>
+        let r = document.getElementById("dr");
+        let y = document.getElementById("dy");
+        let g = document.getElementById("dg");
+        let dt = document.getElementById("dt");
+        let al = r;//指定当前亮的是红灯
+        let aC = 'red';
+        let t = 30;
+        al.style.backgroundColor = aC;//当前灯亮
+        setInterval(setActLight, 1000);
+        function setActLight() {
+            t = t - 1;//剩余时间减1
+            if (t < 0) {
+                al.style.backgroundColor = 'white';//当前灯灭
+                if (al == r) {
+                    al = g;
+                    t = 35;
+                    aC = 'green';
+                } else if (al == g) {
+                    al = y;
+                    t = 5;
+                    aC = 'yellow';
+                } else {
+                    al = r;
+                    t = 30;
+                    aC = 'red';
+                }
+                al.style.backgroundColor = aC;//当前灯亮
+            }
+            dt.innerHTML = t;//更新剩余时间
+        }
+    </script>
+</body>
+
+</html>

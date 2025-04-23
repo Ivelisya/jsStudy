@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小窗口拖拽</title>
+    <style>
+        body {
+            position: relative;
+            /* 确定body为相对坐标系 */
+        }
+
+        #dwin {
+            position: absolute;
+            width: 400px;
+            height: 300px;
+            left: 200px;
+            top: 200px;
+            border: 1px solid gray;
+            background-color: gray;
+        }
+
+        #pTitle {
+            width: 396px;
+            height: 26px;
+            margin: 2px auto;
+            color: white;
+            background-color: black;
+        }
+
+        #st {
+            margin-left: 5px;
+        }
+
+        #sclose {
+            float: right;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dwin">
+        <p id="pTitle">
+            <span id="st">窗口标题</span>
+            <span id="sclose">X</span>
+        </p>
+        <div id="dContent">
+            主题内容
+        </div>
+    </div>
+    <script>
+        var dW = document.getElementById('dwin');
+        var pT = document.getElementById('pTitle');
+        var flag = false;
+        pT.onmousedown = function (e) {
+            var el = e || window.event; /*兼容IE浏览器的语法*/
+            var X0 = el.clientX;
+            var Y0 = el.clientY;
+            var left = dW.offsetLeft;
+            var top = dW.offsetTop;
+            flag = true; /*鼠标按下了*/
+            document.onmousemove = function (e2) {
+                if (!flag) return;
+                var el2 = e2 || window.event;
+                let x1 = el2.clientX;
+                let y1 = el2.clientY;
+                dW.style.left = (left + (x1 - X0)) + 'px';
+                dW.style.top = (top + (y1 - Y0)) + 'px';
+            };
+            document.onmouseup = function () {
+                flag = false;
+            };
+        };
+    </script>
+</body>
+
+</html>

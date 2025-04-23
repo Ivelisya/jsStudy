@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const students = [
+            { name: "张三", scores: { math: 85, english: 78, science: 92 } },
+            { name: "李四", scores: { math: 90, english: 88, science: 84 } },
+            { name: "王五", scores: { math: 76, english: 95, science: 89 } }
+        ];
+        students.forEach(student => {
+            const scores = Object.values(student.scores);
+            const totalScore = scores.reduce((sum, score) => sum + score, 0);
+            const averageScore = (totalScore / scores.length).toFixed(2);
+            console.log(`学生: ${student.name}`);
+            console.log(`总成绩:${totalScore}`);
+            console.log(`平均成绩: ${averageScore}`);
+            console.log('-------');
+        });
+    </script>
+</body>
+
+</html>
