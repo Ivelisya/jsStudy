@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,44 +10,51 @@
         body {
             font-family: sans-serif;
         }
+
         #app {
             width: 80%;
             margin: 20px auto;
         }
+
         .hot-search {
             border: 1px solid #ccc;
             padding: 10px;
         }
+
         .hot-title {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 10px;
         }
+
         .hot-list {
             /*  这里可以添加热搜列表的样式  */
         }
+
         .left {
             font-weight: bold;
             font-size: 1.2em;
         }
+
         .right {
             color: blue;
             cursor: pointer;
         }
     </style>
-    <script src="../../vue.global.js"></script>  <!--  引入Vue.js  -->
+    <script src="../../vue.global.js"></script> <!--  引入Vue.js  -->
 </head>
+
 <body>
     <div id="app">
         <div class="hot-search">
             <div class="hot-title">
                 <div class="left">百度热搜</div>
-                <div class="right" @click="refresh">换一换</div>  <!--  使用Vue的事件绑定  -->
+                <div class="right" @click="refresh">换一换</div> <!--  使用Vue的事件绑定  -->
             </div>
             <div class="hot-list">
                 <ul>
-                    <li v-for="(item, index) in hotSearches" :key="index">  <!--  使用Vue的循环渲染  -->
+                    <li v-for="(item, index) in hotSearches" :key="index"> <!--  使用Vue的循环渲染  -->
                         {{ index + 1 }}. {{ item }}
                     </li>
                 </ul>
@@ -61,7 +69,16 @@
             setup() {
                 //  定义响应式数据
                 const hotSearches = ref([
-                    "Vue.js", "JavaScript", "HTML", "CSS", "百度", "前端开发", "编程", "人工智能", "科技", "新闻"
+                    "中国是世界绿色发展的坚定行动派",
+                    "外交部再次回应：中美未就关税谈判",
+                    "“中国赢下了这一轮”",
+                    "航天员乘组拍下“太空全家福”",
+                    "刘非任杭州市委书记",
+                    "不要欺负七旬老人唐国强",
+                    "#印巴若开战谁会赢得战争#",
+                    "中国这两个邻国又到战争边缘",
+                    "Create2025百度AI开发者大会",
+                    "儿子悄悄考上北大妈妈惊成静止画面"
                 ]);
 
                 //  定义刷新热搜的方法
@@ -81,4 +98,5 @@
         app.mount('#app');  //  将Vue应用挂载到#app元素上
     </script>
 </body>
+
 </html>

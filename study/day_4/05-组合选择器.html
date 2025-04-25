@@ -5,34 +5,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>组合选择器</title>
-</head>
-<!-- 
+    <!-- 
     组合选择器
-        后代选择器
+        后代选择器 选择器之间以空格分隔
             选择指定元素的后代元素
             选择器1 选择器2{
                 属性:属性值;
             }
-                
-        子代选择器
+            指定元素 指定子代元素{
+                属性:属性值;
+            }
+        子代选择器 以大于号分隔
             选择指定元素的子代元素
             选择器1>选择器2{
                 属性:属性值;
             }
-        相邻兄弟选择器
+        相邻兄弟选择器 以加号分隔
             选择指定元素的相邻兄弟元素
             选择器1+选择器2{
                 属性:属性值;
             }
-        普通兄弟选择器
+        普通兄弟选择器 以波浪线分隔
             选择指定元素的兄弟元素
             选择器1~选择器2{
                 属性:属性值;
             }
 -->
+    <style type="text/css">
+        /* 
+            后代选择器 以空格分隔
+            .food li {
+            background-color: burlywood;
+            border: 1px solid #000;
+        }
+            */
+
+        /* 子代选择器 以大于号分隔 选择指定标签元素的所有第一代子元素 */
+        .food>li {
+            border: 1px solid #000;
+        }
+
+        /* 相邻兄弟选择器 以加号分隔 选择指定标签元素的相邻兄弟元素 
+        指定标签 且一定是相邻的兄弟元素
+        */
+        #d+div {
+            background-color: #ccc;
+            color: #000;
+        }
+
+        /* 普通兄弟选择器  */
+        #t ~ li{
+            background-color: #ccc;
+            color: #000;
+        }
+    </style>
+</head>
+
 
 <body>
+    <h3>食物</h3>
+    <ul class="food">
+        <li>水果
+            <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>梨</li>
+            </ul>
+        </li>
+        <li>蔬菜
+            <ul>
+                <li>白菜</li>
+                <li>油菜</li>
+                <li>卷心菜</li>
+            </ul>
+        </li>
+    </ul>
+    <div id="d">
+        相邻兄弟选择器1
+        <ul>
+            <li>开心麻花</li>
+            <li>贾玲</li>
+            <li>宋小宝</li>
+        </ul>
+    </div>
+    <div>
+        相邻兄弟选择器2
+    </div>
 
+    <div>
+        相邻兄弟选择器3
+    </div>
+
+    <p>
+        相邻兄弟选择器4
+    </p>
+    <div>
+        普通兄弟选择器1
+        <ul>
+            <li id = "t">开心麻花</li>
+            <li>贾玲</li>
+            <li>宋小宝</li>
+            <li>沈腾</li>
+            <li>王宁</li>
+        </ul>
+    </div>
 </body>
 
 </html>
