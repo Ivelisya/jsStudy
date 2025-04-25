@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百度热搜</title>
+    <style>
+        /* 简单的CSS样式，用于美化页面 */
+        body {
+            font-family: sans-serif;
+        }
+        #app {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .hot-search {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .hot-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .hot-list {
+            /*  这里可以添加热搜列表的样式  */
+        }
+        .left {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .right {
+            color: blue;
+            cursor: pointer;
+        }
+    </style>
+    <script src="../../vue.global.js"></script>  <!--  引入Vue.js  -->
+</head>
+<body>
+    <div id="app">
+        <div class="hot-search">
+            <div class="hot-title">
+                <div class="left">百度热搜</div>
+                <div class="right" @click="refresh">换一换</div>  <!--  使用Vue的事件绑定  -->
+            </div>
+            <div class="hot-list">
+                <ul>
+                    <li v-for="(item, index) in hotSearches" :key="index">  <!--  使用Vue的循环渲染  -->
+                        {{ index + 1 }}. {{ item }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { createApp, ref } = Vue;  //  从Vue中解构出createApp和ref
+
+        const app = createApp({
+            setup() {
+                //  定义响应式数据
+                const hotSearches = ref([
+                    "Vue.js", "JavaScript", "HTML", "CSS", "百度", "前端开发", "编程", "人工智能", "科技", "新闻"
+                ]);
+
+                //  定义刷新热搜的方法
+                const refresh = () => {
+                    //  模拟刷新，随机打乱热搜列表
+                    const shuffled = [...hotSearches.value].sort(() => Math.random() - 0.5);
+                    hotSearches.value = shuffled;
+                };
+
+                return {
+                    hotSearches,
+                    refresh
+                };
+            }
+        });
+
+        app.mount('#app');  //  将Vue应用挂载到#app元素上
+    </script>
+</body>
+</html>
