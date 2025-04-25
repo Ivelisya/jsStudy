@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字体</title>
+    <!-- 设置字体 
+        当font family的属性值包含空格或特殊字符时 需要将font属性值用引号括起来
+            font-family有后备机制，可以为元素设置多种字体 当浏览器不识别第一种字体时 会尝试找第二种字体 
+
+            当fontfamily属性值有多个时 使用,隔开
+
+            font-size
+                设置字体大小
+            font-style
+                设置字体样式
+                    normal: 普通字体
+                    italic: 斜体字
+                    oblique: 倾斜体字
+            font-weight
+                设置字体粗细
+                bold: 粗体字
+                100~900: 数字越大字体越粗
+                400 正常字体
+                700 粗体字
+                    -->
+
+    <style type="text/css">
+        div {
+            /* 设置字体 */
+            font-family: 楷体, "微软雅黑", "宋体", "Arial", "Helvetica", sans-serif;
+            /* 设置字体大小 */
+            font-size: 20px;
+            font-style:italic;
+            font-weight: 700;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>这是一段文本</div>
+</body>
+
+</html>
