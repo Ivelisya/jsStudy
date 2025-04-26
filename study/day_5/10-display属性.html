@@ -1,0 +1,89 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display属性</title>
+    <!-- 
+        块级元素
+            可以设置元素的宽高和边距，元素会自动换行
+        行内元素
+            不能设置元素的宽高和边距
+        行内块级元素
+            可以设置宽高，元素不会自动换行
+        display属性
+            规定元素生成框的类型
+            block 元素会被显示 且元素会变成块级元素 元素前后会有换行符
+            none 元素会被隐藏
+            inline 元素会被显示 且元素会变成行内元素 元素前后不会有换行符
+            inline-block 元素会被显示 且元素会变成行内块元素 元素前后不会有换行符 但是可以设置宽高
+    -->
+    <!-- display最终规定元素生成的类型 -->
+    <style type="text/css">
+        #sp2 {
+            display: none;
+        }
+
+        #sp2 {
+            display: block;
+            width: 100px;
+            height: 100px;
+        }
+
+        #sp1 {
+
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+
+        #div1 {
+            background-color: wheat;
+        }
+
+        #div2 {
+            background-color: aqua;
+        }
+
+        #div3 {
+            background-color: blueviolet;
+        }
+
+        /* 行内元素 */
+        div {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+        }
+
+        p {
+            display: inline-block;
+            width: 200px;
+            background-color: aliceblue;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <span id="sp1">
+        这是一个span
+    </span>
+    <span id="sp2">
+        这是一个span2
+    </span>
+    <span id="sp3">
+        这是一个span3
+    </span>
+    <hr>
+    <div id="div1">div1</div>
+    <div id="div2">div2</div>
+    <div id="div3">div3</div>
+
+    <hr>
+    <p>文本1</p>
+    <p>文本12</p>
+    <p>文本13</p>
+</body>
+
+</html>
