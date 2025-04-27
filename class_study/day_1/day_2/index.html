@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Demo</title>
+    <style>
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{ message }}</p>
+        <p>姓名: {{ name }}</p>
+        <p>计数器: {{ count }}</p>
+        <p v-html="html"></p>
+        <div v-bind:class="redCalss">这是带有 class 的 div</div>
+        <!--  <img v-bind:src="imageUrl" alt="图片">  --> <!--  这里可以添加图片，需要定义 imageUrl  -->
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script> <!--  引入 Vue.js  -->
+    <script>
+        const app = Vue.createApp({
+            // 把这个 setup 函数用 es6 简写
+            setup() {
+                // 只有 ref 的数据才能发生变化显示在页面上
+                const count = Vue.ref(0);
+                // 每隔一秒钟 count+1
+                setInterval(() => count.value++, 1000);
+
+                const msg = Vue.ref('会当凌绝顶，一览众山小');
+
+                setTimeout(() => {
+                    msg.value = "锲而不舍";
+                }, 3000);
+
+                return {
+                    message: "你好，世界！",
+                    name: "张三",
+                    // 1. 要 return 出去
+                    count,
+                    msg,
+                    html: '<h1>我是 html</h1>',
+                    // red 是 css 的 class
+                    redCalss: { red: true },
+                    // imageUrl: 'your-image-url.jpg'  //  定义图片 URL
+                };
+            }
+        });
+
+        // 把数据渲染到 #app 上
+        app.mount("#app");
+    </script>
+</body>
+
+</html>

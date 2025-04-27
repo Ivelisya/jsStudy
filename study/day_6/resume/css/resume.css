@@ -1,0 +1,17 @@
+/* 
+通过id选择器设置样式
+*/
+#container {
+    background-color: #f0f0f0;/* 设置背景颜色为浅灰色 */
+    margin:0 15%; 
+    /* 上下边距为0 左右边距15% */
+}
+
+/* 通过元素选择器h1设置样式 */
+h1{
+    height: 70px;
+    color:white;
+    background: cornflowerblue;/* 设置背景颜色为亮蓝色 */
+    line-height: 70px;/* 设置行高为70px，使文字垂直居中 */;
+    text-indent: 70px;
+}
