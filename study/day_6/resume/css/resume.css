@@ -38,14 +38,32 @@ nav导航下的li元素
     background-color: cornflowerblue;
     line-height: 30px;
     /* color: #f0f0f0; */
-    border:1px solid cornflowerblue; /* 设置边框颜色为亮蓝色 */
+    border: 1px solid cornflowerblue;
+    /* 设置边框颜色为亮蓝色 */
     border-radius: 0 10px;
 }
-#nav li a{
-    text-decoration: none; /*去除文本修饰*/
-    color:white;
-}
-/* 通过设置a标签的伪类选择器:hover */
-#nav li a:hover{
 
+#nav li a {
+    text-decoration: none;
+    /*去除文本修饰*/
+    color: white;
+}
+
+/* 通过设置a标签的伪类选择器:hover */
+#nav li a:hover {
+    font-weight: bold;
+}
+
+.center {
+    text-align: center;
+}
+
+.img {
+    margin: 0 30px;
+}
+.info{
+    margin: 0 30px;;
+}
+.info p {
+    text-indent: 50px;
 }
