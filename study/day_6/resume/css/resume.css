@@ -61,9 +61,31 @@ nav导航下的li元素
 .img {
     margin: 0 30px;
 }
-.info{
-    margin: 0 30px;;
+
+.info {
+    margin: 0 30px;
+    ;
 }
+
 .info p {
     text-indent: 50px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+}
+
+#backtop {
+    text-align: center;
+}
+
+#backtop>a {
+    text-decoration: none;
+}
+
+#copyright {
+    background-color: cornflowerblue;
+    text-align: center;
+    color: white;
 }
