@@ -1,11 +1,12 @@
 /* 
-通过id选择器设置样式
+通过ID选择器设置样式
 */
-#container {
+#main-container {
+    /* 优化: 从 #container 改为 #main-container，表示主容器 */
     background-color: #f0f0f0;
     /* 设置背景颜色为浅灰色 */
     margin: 0 15%;
-    /* 上下边距为0 左右边距15% */
+    /* 上下边距为0，左右边距15% */
 }
 
 /* 通过元素选择器h1设置样式 */
@@ -16,21 +17,23 @@ h1 {
     /* 设置背景颜色为亮蓝色 */
     line-height: 70px;
     /* 设置行高为70px，使文字垂直居中 */
-    ;
     text-indent: 70px;
+    /* 缩进文本 */
 }
 
-#nav {
+/* 通过ID选择器设置导航菜单样式 */
+#navigation-menu {
+    /* 优化: 从 #nav 改为 #navigation-menu，表示导航菜单 */
     text-align: center;
     /* 设置文本居中对齐 */
-    ;
 }
 
 /* 
 后代选择器 
-nav导航下的li元素
+navigation-menu下的li元素
 */
-#nav li {
+#navigation-menu li {
+    /* 优化: 从 #nav li 改为 #navigation-menu li */
     display: inline-block;
     /* 设置为行内块元素 */
     width: 100px;
@@ -38,37 +41,46 @@ nav导航下的li元素
     background-color: cornflowerblue;
     line-height: 30px;
     /* color: #f0f0f0; */
+    /* 这行被注释掉，原样保留 */
     border: 1px solid cornflowerblue;
     /* 设置边框颜色为亮蓝色 */
     border-radius: 0 10px;
+    /* 圆角边框 */
 }
 
-#nav li a {
+#navigation-menu li a {
+    /* 优化: 从 #nav li a 改为 #navigation-menu li a */
     text-decoration: none;
-    /*去除文本修饰*/
+    /* 去除文本修饰 */
     color: white;
 }
 
 /* 通过设置a标签的伪类选择器:hover */
-#nav li a:hover {
+#navigation-menu li a:hover {
+    /* 优化: 从 #nav li a:hover 改为 #navigation-menu li a:hover */
     font-weight: bold;
+    /* 加粗字体 */
 }
 
-.center {
+.media-center {
+    /* 优化: 从 .center 改为 .media-center，表示媒体居中容器 */
     text-align: center;
 }
 
-.img {
+.profile-image {
+    /* 优化: 从 .img 改为 .profile-image，表示人物资料图片 */
     margin: 0 30px;
 }
 
-.info {
+.profile-sections {
+    /* 优化: 从 .info 改为 .profile-sections，表示人物资料部分 */
     margin: 0 30px;
-    ;
 }
 
-.info p {
+.profile-sections p {
+    /* 优化: 从 .info p 改为 .profile-sections p */
     text-indent: 50px;
+    /* 文本缩进 */
 }
 
 textarea {
@@ -76,15 +88,18 @@ textarea {
     height: 100px;
 }
 
-#backtop {
+#button-back-to-top {
+    /* 优化: 从 #backtop 改为 #button-back-to-top，表示返回顶部按钮 */
     text-align: center;
 }
 
-#backtop>a {
+#button-back-to-top a {
+    /* 优化: 从 #backtop a 改为 #button-back-to-top a */
     text-decoration: none;
 }
 
-#copyright {
+#footer-copyright {
+    /* 优化: 从 #copyright 改为 #footer-copyright，表示页脚版权信息 */
     background-color: cornflowerblue;
     text-align: center;
     color: white;

@@ -9,56 +9,57 @@
 
 <body>
     <!-- 简历页面start -->
-    <div id="container">
+    <div id="main-container"> <!-- 优化: 从 "container" 改为 "main-container" -->
 
         <!-- h1标题标签 -->
         <h1>人物简历-吴彦祖</h1>
 
         <!-- 导航信息 start -->
-        <div id="nav">
+        <div id="navigation-menu"> <!-- 优化: 从 "nav" 改为 "navigation-menu" -->
             <ul>
                 <li>
-                    <a href="#basic-info">基本信息</a> <!-- 已填充为指向基本信息 -->
+                    <a href="#section-basic-info">基本信息</a> <!-- 更新 href 以匹配新 ID -->
                 </li>
                 <li>
-                    <a href="#early-life">早年经历</a> <!-- 已填充为指向早年经历 -->
+                    <a href="#section-early-life">早年经历</a> <!-- 更新 href 以匹配新 ID -->
                 </li>
                 <li>
-                    <a href="#career">演艺经历</a> <!-- 已填充为指向演艺经历 -->
+                    <a href="#section-career">演艺经历</a> <!-- 更新 href 以匹配新 ID -->
                 </li>
                 <li>
-                    <a href="#awards">获奖记录</a> <!-- 已填充为指向获奖记录 -->
+                    <a href="#section-awards">获奖记录</a> <!-- 更新 href 以匹配新 ID -->
                 </li>
                 <li>
-                    <a href="#social-activities">社会活动</a> <!-- 已填充为指向社会活动 -->
+                    <a href="#section-social-activities">社会活动</a> <!-- 更新 href 以匹配新 ID -->
                 </li>
                 <li>
-                    <a href="#contact-info">联系信息</a> <!-- 已填充为指向联系信息 -->
+                    <a href="#section-contact-info">联系信息</a> <!-- 更新 href 以匹配新 ID -->
                 </li>
             </ul>
         </div>
         <!-- 导航信息 end -->
         <!-- 图片和视频 start-->
-        <div class="center">
+        <div class="media-center"> <!-- 优化: 从 "center" 改为 "media-center" -->
             <!-- src：引入图片地址 width宽度 height高度 -->
-            <img src="img/wu.jpg" alt="吴彦祖" class="img" width="200px" height="280px" />
-            <video controls class="video" height="280px">
+            <img src="img/wu.jpg" alt="吴彦祖" class="profile-image" width="200px" height="280px" />
+            <!-- 优化: 从 "img" 改为 "profile-image" -->
+            <video controls class="profile-video" height="280px"> <!-- 优化: 从 "video" 改为 "profile-video" -->
                 <source src="img/wu.mp4" type="video/mp4">
                 您的浏览器不支持视频播放。
             </video>
         </div>
         <!-- 图片和视频 end -->
         <!-- 人物信息start -->
-        <div class="info">
+        <div class="profile-sections"> <!-- 优化: 从 "info" 改为 "profile-sections" -->
             <!-- 基本信息 -->
             <div>
-                <h2 id="basic-info">基本信息</h2> <!-- 添加 ID -->
+                <h2 id="section-basic-info">基本信息</h2> <!-- 优化: 从 "basic-info" 改为 "section-basic-info" -->
                 <p>吴彦祖，这位出生于美国的华裔演员，以其俊朗的外形和精湛的演技征服了无数观众。他不仅在香港电影界取得了辉煌成就，凭借《新警察故事》、《门徒》等作品赢得了广泛赞誉，更在好莱坞和美剧中崭露头角，展现了其多元的表演才华。除了演员身份，吴彦祖还是一位导演和制片人，积极参与电影制作，为华语电影的发展贡献力量。他与妻子Lisa
                     S.的婚姻也备受瞩目，两人育有一女，家庭生活幸福美满，堪称事业与家庭双丰收的典范。</p>
             </div>
             <!-- 早年经历 -->
             <div>
-                <h2 id="early-life">早年经历</h2> <!-- 添加 ID -->
+                <h2 id="section-early-life">早年经历</h2> <!-- 优化: 从 "early-life" 改为 "section-early-life" -->
                 <p>吴彦祖，1974年9月30日出生于美国加利福尼亚州伯克利，父母均为中国人，父亲是工程师，母亲是大学教授。他在成长过程中深受多元文化的影响，既有美国的生活环境，也有中国家庭的传统熏陶。吴彦祖从小就展现出对艺术的兴趣，尤其喜欢绘画和摄影，同时对武术也有浓厚热情，曾学习过多种格斗技巧。
                 </p>
                 <p>他在加州长大，就读于奥克兰的一所学校，青少年时期性格较为内向，但对电影和表演逐渐产生了兴趣。高中毕业后，吴彦祖进入俄勒冈大学，主修建筑学，并在大学期间开始接触模特工作，为他日后进入娱乐圈埋下了伏笔。大学毕业后，他在1997年的一次香港旅行中被星探发掘，开启了他的演艺生涯。
@@ -68,7 +69,7 @@
             </div>
             <!-- 演艺经历 -->
             <div>
-                <h2 id="career">演艺经历</h2> <!-- 添加 ID -->
+                <h2 id="section-career">演艺经历</h2> <!-- 优化: 从 "career" 改为 "section-career" -->
                 <table border="1" align="center" cellspacing="0" cellpadding="0" width="100%">
                     <tr>
                         <th width="100px">时期</th>
@@ -122,7 +123,7 @@
 
             <!-- 获奖记录 -->
             <div>
-                <h2 id="awards">获奖记录</h2> <!-- 添加 ID -->
+                <h2 id="section-awards">获奖记录</h2> <!-- 优化: 从 "awards" 改为 "section-awards" -->
                 <table border="1" align="center" cellspacing="0" cellpadding="0" width="100%">
                     <tr>
                         <th width="100px">年份</th>
@@ -174,7 +175,8 @@
 
             <!-- 社会活动 -->
             <div>
-                <h2 id="social-activities">社会活动</h2> <!-- 添加 ID -->
+                <h2 id="section-social-activities">社会活动</h2>
+                <!-- 优化: 从 "social-activities" 改为 "section-social-activities" -->
                 <p><strong>2010:</strong> 参与WWF（世界自然基金会）海洋保护活动，作为大使推广反 plastic污染议题，积极呼吁公众减少海洋废物。</p>
                 <p><strong>2015:</strong> 加入#StopAsianHate运动，支持亚裔社区权益，反对种族歧视，并在社交媒体上分享个人经历以激励粉丝。</p>
                 <p><strong>2018:</strong> 担任联合国环境署(UNEP)大使，参与气候变化宣传，并出席多场国际会议讨论可持续时尚。</p>
@@ -186,7 +188,7 @@
 
             <!-- 联系信息 -->
             <div>
-                <h2 id="contact-info">联系信息</h2> <!-- 添加 ID -->
+                <h2 id="section-contact-info">联系信息</h2> <!-- 优化: 从 "contact-info" 改为 "section-contact-info" -->
                 <p>请你将想要告诉我的话发送至我的邮箱:</p>
                 <form action="mailto:123@qq.com">
                     <textarea name="" id="">
@@ -197,11 +199,11 @@
                 </form>
             </div>
             <!-- 返回顶部 -->
-            <div id="backtop">
-                <a href="#container">返回顶部</a>
+            <div id="button-back-to-top"> <!-- 优化: 从 "backtop" 改为 "button-back-to-top" -->
+                <a href="#main-container">返回顶部</a> <!-- 更新 href 以匹配新 ID -->
             </div>
             <!-- 版权信息 -->
-            <div id="copyright">
+            <div id="footer-copyright"> <!-- 优化: 从 "copyright" 改为 "footer-copyright" -->
                 <p>版权所有 &copy; 2023 吴彦祖</p>
             </div>
         </div>
