@@ -1,0 +1,69 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+数组的定义
+    1.长度可变
+    2.数组中数据类型任意
+    3.索引从0开始
+基本操作
+    数组的长度可以通过length属性来获取，长度可以任意修改 获取长度 数组.length 设置长度 数组.length = 10
+    获取数组中元素通过索引获取 数组[0] 数组[1] 数组[2] ... 数组[n-1]
+    属性不影响数组的长度
+-->
+
+<body>
+    <script type="text/javascript">
+        // 数组的定义 隐式创建
+        var arr = [];
+        console.log(arr); // []
+        var arr2 = [1, 'a', , true];
+        console.log(arr2); // [1, "a", true]
+
+        //直接实例化
+        var arr3 = new Array(1, 2, 3, 4, 5);
+        console.log(arr3); // [1, 2, 3, 4, 5]
+
+        //创建数组并指定长度
+        var arr4 = new Array(5); // 创建一个长度为5的数组
+        console.log(arr4); // [ <5 empty items> ]
+
+        //获取数组的长度
+        console.log(arr4.length); // 5
+        arr4.length = 10; // 修改数组的长度
+        console.log(arr4); // [ <5 empty items>, <5 empty items> ]
+
+        //获取数组的元素
+        console.log(arr4[0]); // undefined
+        console.log(arr3[0]); 
+
+        //设置元素
+        arr2[4] = 'zhangsan'; // 设置索引为4的元素为'zhangsan'
+        console.log(arr2); // [1, "a", true, undefined, "zhangsan"]
+
+        //设置属性 任意都可以设置属性 非正整数的索引被称之为属性
+        arr2['a'] = "admin";
+        console.log(arr2); // [1, "a", true, undefined, "zhangsan", a: "admin"]
+        //属性不影响数组的长度
+        console.log(arr2.length); // 5
+        //分割符号
+        console.log('====================================');
+
+        //数组的遍历
+        //for循环遍历 只能拿到正常索引和空数据
+            for(var i = 0; i < arr2.length; i++) {
+                console.log(arr2[i]); // 1 "a" true undefined "zhangsan"
+            }
+        console.log(arr2.a);
+        //for in循环遍历 只能拿到正常索引和属性
+            for(let i in arr2) {
+                console.log(arr2[i]); // 1 "a" true undefined "zhangsan" admin
+            }
+    </script>
+</body>
+
+</html>

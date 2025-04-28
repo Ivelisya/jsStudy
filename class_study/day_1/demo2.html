@@ -9,7 +9,6 @@
     <!-- 引入一个图标库，例如 Font Awesome，用于相机和箭头图标 -->
     <!-- 或者使用 SVG/图片 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- <script src="../../vue.global.js"></script> 新增：引入Vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 </head>
@@ -17,7 +16,6 @@
 <body>
     <div class="main-container" id="app"> <!-- 新增id="app" -->
         <div class="logo">
-            <!-- 使用你提供的图片，确保路径正确 -->
             <img src="baidu.png" alt="百度Logo">
         </div>
 
@@ -104,14 +102,9 @@
                 window.location.href = searchUrl;
             }
         }
-
-
-        // --- 热榜换一换逻辑用Vue实现 ---
         const { createApp, ref } = Vue;
-
         createApp({
             setup() {
-                // 热榜数据集
                 const hotSearchData = [
                     [
                         { rank: '不', text: '中马情谊历久弥新', tag: null },
@@ -157,14 +150,12 @@
                     currentIndex.value = (currentIndex.value + 1) % hotSearchData.length;
                     hotSearches.value = hotSearchData[currentIndex.value];
                 };
-
                 return {
                     hotSearches,
                     refresh
                 };
             }
         }).mount('#app');
-        // --- 结束 ---
     </script>
 
 </body>

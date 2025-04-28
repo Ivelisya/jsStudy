@@ -15,6 +15,11 @@
 
         构造方法
             js提供了构造方法
+
+        number()函数可以将字符串转换为数字,如果字符串中包含非数字字符,则返回NaN
+        string()函数可以将数字转换为字符串,如果数字中包含非数字字符,则返回NaN
+
+        转字符串的最简单的方法 往任意数据后面+ '' 就可以了
 -->
 
 <body>
@@ -44,8 +49,19 @@
         console.log(data2.toFixed(0));
         var data3 = 1.46;
         console.log(data3.toFixed(1));
+        console.log("===================="); //1.46
+        console.log("Number(5.5)");
+        console.log(Number("56.5"));
+        console.log(Number("5.6.7"));//NaN
+//      将任意值转换成字符串,包括null和undefined
+        var qq = null;
+        console.log(qq); //null
+        // console.log(qq.toString()); //报错 null没有tostring类型
+        console.log(String(qq)); //null
+        console.log(qq + ""); //null
 
-        //
+        var flag = true;
+        console.log(flag + ' '); //true
     </script>
 </body>
 
