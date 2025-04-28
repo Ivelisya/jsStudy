@@ -1,0 +1,30 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类型转换</title>
+</head>
+<!-- 
+    函数转换
+        parseInt() 解析字符串并返回整数
+        parseFloat() 解析字符串并返回浮点数
+
+-->
+
+<body>
+    <script type="text/javascript">
+        // parseInt() 解析字符串并返回整数
+        console.log(parseInt("123abc")); // 123
+        console.log(parseInt("123.45")); //123
+        console.log(parseInt('abc')); //NaN
+
+        //parseFloat() 解析字符串返回第一个小数点前面的数
+        console.log(parseFloat("123abc"));
+        console.log(parseFloat("123.45"));
+        console.log(parseFloat("abc"));
+        console.log(parseFloat("12.13.45"));
+    </script>
+</body>
+
+</html>
