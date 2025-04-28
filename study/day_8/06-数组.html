@@ -59,10 +59,18 @@
                 console.log(arr2[i]); // 1 "a" true undefined "zhangsan"
             }
         console.log(arr2.a);
-        //for in循环遍历 只能拿到正常索引和属性
+        //for in循环遍历 只能拿到正常索引和属性 不能取到空
             for(let i in arr2) {
+                console.log(i); // 0 1 2 4 a
                 console.log(arr2[i]); // 1 "a" true undefined "zhangsan" admin
             }
+        //foreach
+        console.log('====================================');
+            arr2.forEach(function(item, index) {
+                console.log(index); // 0 1 2 4
+                console.log(item); // 1 "a" true undefined "zhangsan"
+            });
+
     </script>
 </body>
 
