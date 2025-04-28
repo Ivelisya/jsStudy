@@ -9,7 +9,12 @@
     函数转换
         parseInt() 解析字符串并返回整数
         parseFloat() 解析字符串并返回浮点数
+    显式转换
+        tostring()可以将数字转换成字符串
+        Number还提供了toFixed()函数将根据小数点后指定位数将数字转为字符串,四舍五入
 
+        构造方法
+            js提供了构造方法
 -->
 
 <body>
@@ -24,6 +29,23 @@
         console.log(parseFloat("123.45"));
         console.log(parseFloat("abc"));
         console.log(parseFloat("12.13.45"));
+
+        console.log("==================");
+        // 显示转换
+        var data = 10;
+        console.log(data);/*控制台中 有数据类型的打印出来有颜色 没有*/
+        console.log(data.toString());
+        /*
+        var data1 = null;
+        console.log(data1.toString());//报错 null没有tostring类型
+        */
+        //tofixed()
+        var data2 = 1.4;
+        console.log(data2.toFixed(0));
+        var data3 = 1.46;
+        console.log(data3.toFixed(1));
+
+        //
     </script>
 </body>
 
