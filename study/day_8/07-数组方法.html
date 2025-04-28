@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        //定义数组
+        var arr = [1, 2, 3, 4, 5, 'a', 3, 'b'];
+        //push
+        arr.push(6); //在数组末尾添加元素
+        arr.unshift(0); //在数组开头添加元素
+        console.log(arr); // [0, 1, 2, 3, 4, 5, "a", 3, "b", 6]
+        arr.pop(); //删除数组末尾元素
+        arr.shift(); //删除数组开头元素
+        console.log(arr); // [1, 2, 3, 4, 5, "a", 3, "b"]
+        // reverse
+        var arr2 = arr.reverse(); //反转数组
+        console.log(arr); // ["b", 3, "a", 5, 4, 3, 2, 1]
+        console.log(arr2); // ["b", 3, "a", 5, 4, 3, 2, 1]
+        // 两个都会反转
+        var str = arr.join('-'); //将数组转换为字符串
+        console.log(str); // "b-3-a-5-4-3-2-1"
+
+        console.log("=========================="); // ["b", 3, "a", 5, 4, 3, 2, 1]
+        var index = arr.indexOf(3); //查找元素在数组中的索引
+        console.log(index); // 1
+
+        // slice 切片原数组不改变
+        var arr3 = arr.slice(1, 4); //从索引1到索引4（不包括4）切片
+        console.log(arr3); // [3, 4, 5]
+
+        var arr4 = arr.slice(-3); //从索引-3到末尾切片
+        console.log(arr4); // [5, 4, 3]
+        console.log("=========================="); // ["b", 3, "a", 5, 4, 3, 2, 1]
+        var arr5 = arr.splice(0, 5, 'aa', "bb"); //从索引1到索引-2（不包括-2）剪切
+        console.log(arr);
+        console.log("==========================="); // [1, 2, 3, 4, 5]
+        var arr6 = [100, 200];
+        var newarr = arr.concat(arr6); //连接数组
+        console.log(newarr); // ["b", 3, "a", 5, 4, 3, 2, 1]
+    </script>
+</body>
+
+</html>

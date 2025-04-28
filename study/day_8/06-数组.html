@@ -39,7 +39,7 @@
 
         //获取数组的元素
         console.log(arr4[0]); // undefined
-        console.log(arr3[0]); 
+        console.log(arr3[0]);
 
         //设置元素
         arr2[4] = 'zhangsan'; // 设置索引为4的元素为'zhangsan'
@@ -55,22 +55,21 @@
 
         //数组的遍历
         //for循环遍历 只能拿到正常索引和空数据
-            for(var i = 0; i < arr2.length; i++) {
-                console.log(arr2[i]); // 1 "a" true undefined "zhangsan"
-            }
+        for (var i = 0; i < arr2.length; i++) {
+            console.log(arr2[i]); // 1 "a" true undefined "zhangsan"
+        }
         console.log(arr2.a);
         //for in循环遍历 只能拿到正常索引和属性 不能取到空
-            for(let i in arr2) {
-                console.log(i); // 0 1 2 4 a
-                console.log(arr2[i]); // 1 "a" true undefined "zhangsan" admin
-            }
+        for (let i in arr2) {
+            console.log(i); // 0 1 2 4 a
+            console.log(arr2[i]); // 1 "a" true undefined "zhangsan" admin
+        }
         //foreach
         console.log('====================================');
-            arr2.forEach(function(item, index) {
-                console.log(index); // 0 1 2 4
-                console.log(item); // 1 "a" true undefined "zhangsan"
-            });
-
+        arr2.forEach(function (item, index) {
+            console.log(index); // 0 1 2 4
+            console.log(item); // 1 "a" true undefined "zhangsan"
+        });
     </script>
 </body>
 
