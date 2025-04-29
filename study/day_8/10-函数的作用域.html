@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+函数的作用域(在js当中只有函数有作用域)
+1.全局变量与局部变量同名问题
+2.在函数中定义变量时，若没有加var关键字，使用之后自动变成全局变量
+-->
+<body>
+    <script type = "text/javascript">
+        var bb = 10;
+        //1.全局变量与局部变量同名问题
+        function test() {
+            var bb = 20; //局部变量 与全局变量bb没有关系 相当于先声明的变量
+            var b = 10; 
+            console.log(bb); //20
+            c = 12;//其实是一个全局变量 没有var修饰符就是一个全局变量
+        }
+        test()
+        console.log(bb); //10
+        console.log(c);
+    </script>
+</body>
+</html>
