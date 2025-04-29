@@ -1,0 +1,79 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 函数的参数
+ 
+    函数的调用
+        1.常用调用方式:函数名([参数列表]); 有返回值的函数可以赋值给变量
+        2.函数调用模式 
+        3.对象调用模式
+-->
+
+<body>
+    <script type="text/javascript">
+        function fn(str) {
+            console.log(str);
+        }
+        // 没传参数
+        fn();
+
+        //如果函数形参同名，在使用时以最后一个为准
+        function fn2(a, a) {
+            console.log(a);
+        }
+        fn2(1, 2); // 2 以最后一个形参为准
+
+        function fn3(a) {
+            a = a || "a";
+            return a;
+        }
+        var a1 = fn3();
+        console.log(a1); // a
+        var a2 = fn3(100);
+        console.log(a2);
+        console.log("=======================");
+        // 参数为值传递 传递副本 引用传递时传递地址 操作的是同一个对象
+        var n = 10;
+        function fn4(num) {
+            num = 20;
+        }
+        fn4(n);
+        console.log(n); // 10 值传递
+
+        //引用传递 传递对象时是传递地址 引用传递
+        var obj = {
+            name: "zhangsan",
+            age: 20
+        };
+        function fn5(o) {
+            o.name = "lisi";
+            o.age = 30;
+        }
+        fn5(obj);
+        console.log(obj); // { name: 'lisi', age: 30 } 引用传递
+
+        console.log("=======================");
+        //函数调用模式
+        function add(a, b) {
+            return a + b;
+        }
+        var sum = add(1, 1);
+        console.log(sum);
+        //对象调用模式
+        var ob = {
+            name: "zhangsan",
+            age: 20,
+            sex: 'man',
+            test: function () {
+                console.log(this.name);
+            }
+        };
+        ob.test(); // zhangsan
+    </script>
+</body>
+
+</html>
