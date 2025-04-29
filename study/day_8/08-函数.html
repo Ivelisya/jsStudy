@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 函数
+        函数的定义
+            有三种定义函数的方式
+            1.函数声明语句
+            2.函数定义表达式
+            3.function构造函数
+
+            注:
+                1.如果使用函数声明语句，那么会有函数名提升的效果
+                2.js中方法没有重载 如果出现重名则覆盖
+                
+             -->
+
+<body>
+    <script type="text/javascript">
+        test();
+
+        function test() {
+            console.log("test");
+        }
+
+        function test1(a) {
+            console.log(a);
+        }
+        test1("test1");
+
+        var test2 = function (a) {
+            console.log(a);
+        }
+        test2("test2");
+
+        // 有参数的
+        var test4 = function (a, b) {
+            console.log(a + b);
+        }
+        test4(1, 2);
+        console.log("======================");
+        var test5 = new Function('a','b','return (a + b);');
+        console.log(test5(1, 2));
+    </script>
+
+</body>
+
+</html>
