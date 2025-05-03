@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <title>对象</title>
+</head>
+<!--对象
+        对象的创建 var 对象名 = {};//空对象
+        对象的序列化和反序列化
+        this
+
+        赋值 对象名.属性名 = 值; 对象存在修改值 对象不存在增加值
+
+        通过new object创建
+        var 对象名 = new Object();//创建对象
+
+        通过object对象的create方法创建
+        var 对象名 = Object.create(父对象);//创建对象 以父对象为原型对象 创建一个新的对象
+
+    -->
+<body>
+    <script type = "text/javascript">
+        //字面量创建
+        //1.字面量形式创建对象
+        var obj = {};//空对象
+        console.log(obj);//{}，空对象
+        var obj = {
+            name: "小明",
+            age: 18
+        }
+        obj.name = "小红";//修改对象属性值
+        console.log(obj);//{name: "小红", age: 18}
+        //非空对象(键都是字符串 值可以是六种数据类型中的一种)
+        var obj2 = {
+            uname:"zhangsan",
+            uage:18,
+            islike:true, //布尔值
+            sayHello :function() {
+                console.log("hello world")
+            },
+            cats:['大毛','喵喵'],
+            dog:{
+                name:'张二狗',
+                age: 2
+            }
+        }
+        console.log(obj2.uname);//zhangsan
+        //方法调用模式 执行函数
+        console.log(obj2.sayHello());//hello world
+        obj2.uage = 19; //修改对象属性值 引用传递
+        console.log(obj2.uage);//19
+
+        var obj3 = new Object();//创建对象
+        obj3.name = "小明";
+        console.log("=============");
+        console.log(obj3.name);//小明
+
+        var obj4 = Object.create(obj2);//创建对象 以obj2为原型对象 创建一个新的对象
+        var obj5 = Object.create(null);
+        console.log(obj4);//{}  obj4是一个空对象
+        console.log(obj5);//{}  obj5是一个空对象
+    </script>
+</body>
+</html>
