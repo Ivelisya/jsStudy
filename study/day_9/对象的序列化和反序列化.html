@@ -1,10 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang = "en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset = "UTF-8">
+    <title>Title</title>
 </head>
+<!--序列化
+        将对象转化为字符串
+    反序列化
+        将字符串转化成对象
+-->
 <body>
-$END$
+    <script type = "text/javascript">
+        var obj = {
+            uname: ' zhangsan',
+            uage: 18,
+            islike: true,
+            sayHello: function () {
+                console.log("hello world");
+            },
+            cats: ['大毛', '喵喵'],
+            dog: {
+                name: '张二狗',
+                age: 2
+            }
+        }
+        // 将js对象转化为字符串
+        var str = JSON.stringify(obj);
+        console.log(obj);
+        console.log(str);
+        
+        //反序列化
+        var obj2 = JSON.parse(str);
+        console.log(obj2);
+
+        //函数中的this对象 谁调用 this就指的是谁
+        
+    </script>
+
 </body>
 </html>
