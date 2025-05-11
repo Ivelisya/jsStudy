@@ -30,11 +30,20 @@
         console.log(str);
         
         //反序列化
+        //将字符串转化为对象
         var obj2 = JSON.parse(str);
         console.log(obj2);
-
-        //函数中的this对象 谁调用 this就指的是谁
         
+        //函数中的this对象 谁调用 this就指的是谁
+        function test() {
+            this.x = 1;
+            console.log(this.x);
+        }
+        
+        //在对象中使用
+        test();//当前调用对象是window对象 window对象是一个全局变量
+        console.log(x);
+    
     </script>
 
 </body>

@@ -1,10 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang = "en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset = "UTF-8">
+    <title>事件</title>
 </head>
-<body>
-$END$
+<!-- load加载事件
+        当页面加载完毕之后执行的事件
+        onload事件
+    常用事件：
+        onload 当页面或图像加载完立刻触发
+        onblur 当元素失去焦点时触发
+        onfocus 当元素获得焦点时触发
+        onsubmit 当表单提交时触发
+        onreset 当表单重置时触发
+        onkeydown 当键盘按下时触发
+        onkeyup 当键盘抬起时触发
+        onclick 当鼠标点击时触发
+        ondblclick 当鼠标双击时触发
+        onmouseover 当鼠标移入元素时触发
+        onmouseout 当鼠标移出元素时触发
+        onchange 当元素内容改变时触发
+-->
+<body onload = "loadWindows()">
+
 </body>
+<!-- 事件冒泡
+ 
+    当点击事件之后 会逐级向上冒泡
+        click事件首先会在 div元素上触发
+        然后会在 body元素上触发 在每一级元素上都会触发
+-->
+<script>
+    function loadWindows() {
+
+        alert("页面加载完毕");
+}
+    </script>  
+
 </html>
