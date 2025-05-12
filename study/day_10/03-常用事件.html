@@ -1,0 +1,75 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常用事件</title>
+</head>
+
+<body>
+    <!-- 
+    常用事件:
+        onload 当页面或图像加载完立刻触发
+        onblur 当元素失去焦点时触发
+        onfocus 当元素获得焦点时触发
+        onsubmit 当表单提交时触发
+        onreset 当表单重置时触发
+        onkeydown 当键盘按下时触发
+        onkeyup 当键盘抬起时触发
+        onclick 当鼠标点击时触发
+        ondblclick 当鼠标双击时触发
+        onmouseover 当鼠标移入元素时触发
+        onmouseout 当鼠标移出元素时触发
+        onchange 当元素内容改变时触发
+    -->
+    姓名: <input type="text" id="uname" /><br>
+    <button type="button" onclick="clickBtn()">点击</button>
+    <hr>
+    <select id="city" name="city"> 
+        <option value="1">请选择城市</option>
+        <option value="2">上海</option>
+        <option value="3">北京</option>
+    </select>
+    <hr>
+    <div id = "div1">
+        这是一个div
+    </div>
+</body>
+
+<script>
+    window.onload = function () {
+        console.log("页面加载完成");
+    }
+    var uname = document.getElementById("uname");
+    uname.onblur = function () {
+        console.log("文本框失去焦点");
+    }
+    // onfuces 元素获得焦点
+    uname.onfocus = function () {
+        console.log("文本框获得焦点");
+    }
+    // onclick 文本点击事件
+    clickBtn = function () {
+        console.log("点击了按钮");
+    }
+    document.getElementById("city").onchange = function () {
+        console.log("城市选择改变");
+    }
+    // onmouseout 鼠标移出
+    var div1 = document.getElementById("div1");
+    div1.onmouseout = function(){
+        console.log("鼠标移出div");
+    }
+    div1.onmouseover = function(){
+        console.log("鼠标悬停div");
+    }
+    uname.onkeydown = function(){
+        console.log("键盘按下");
+    }
+    uname.onkeyup = function(){
+        console.log("键盘抬起");
+    }
+</script>
+
+
+</html>

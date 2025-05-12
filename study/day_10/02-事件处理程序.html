@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件处理程序</title>
+
+</head>
+
+<body>
+    <!-- 
+        事件处理程序（Event Handler）
+        - 用于响应用户的交互操作的函数，通常以 on 开头
+        - 常见事件：onclick、onmouseover、onkeydown 等
+        - 绑定方式：
+            1. HTML属性（如 <button onclick="...">）
+            2. DOM属性（如 element.onclick = ...）
+            3. addEventListener 方法
+
+        DOM 0级事件处理程序
+        - 通过将函数赋值给事件属性（如 element.onclick）绑定事件
+        - 同一元素的同一事件只能绑定一个处理函数，后绑定的会覆盖前面的
+
+        DOM 2级事件处理程序
+        - 使用 addEventListener(event, handler, useCapture) 绑定事件
+            参数1: 事件名（不带 on 前缀，如 "click"）
+            参数2: 事件处理函数
+            参数3: 是否在捕获阶段触发（true 为捕获，false 为冒泡，默认 false）
+        - 使用 removeEventListener(event, handler, useCapture) 移除事件处理函数
+            参数同上，handler 必须是同一个函数引用
+        - 可以为同一元素的同一事件绑定多个处理函数，按绑定顺序触发下
+
+        document.getElementById("btn")通过id属性值获取元素对象 
+            
+    -->
+    <!-- 点击或鼠标移出按钮时触发对应函数 -->
+    <button type="button" onclick="showAlert('hello')" onmouseout="test()">点击我</button>
+
+    <button type="button" id="btn">DOM 0级事件处理程序</button>
+
+    <button type="button" id="btn2">DOM 2级事件处理程序</button>
+    <script>
+        // 鼠标移出按钮时在控制台输出
+        function test() {
+            console.log("鼠标移出");
+        }
+
+        function showAlert(message) {
+            alert(message);
+        }
+
+        // 通过id获取按钮对象
+        var btn = document.getElementById("btn");
+
+        // 通过 DOM 0 级事件处理程序为按钮绑定点击事件
+        // 注意：后绑定的处理函数会覆盖前面的
+        btn.onclick = function () {
+            showAlert("DOM 0级处理事件");
+        };
+
+        // 页面加载完毕时弹窗（未在本例中使用）
+        // function loadWindows() {
+        //     alert("页面加载完毕");
+        // }
+        // DOM 2级事件处理程序
+        var btn2 = document.getElementById("btn2");
+        //给按钮绑定事件监听
+        btn2.addEventListener("click", function () {
+            console.log("DOM 2级处理事件");
+        });
+        btn2.addEventListener("click", fn);
+
+        function fn() {
+            console.log("按钮被点击了");
+        }
+        // 移除事件不能移除匿名函数
+        btn2.removeEventListener("click", fn);
+    </script>
+</body>
+
+</html>

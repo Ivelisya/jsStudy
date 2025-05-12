@@ -1,0 +1,28 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打开窗口</title>
+</head>
+
+<body>
+    <button type="button" id="btn1">打开窗口</button>
+</body>
+<!-- 打开窗口
+    window.open(url, name, specs, replace)
+-->
+<script>
+    document.getElementById("btn1").onclick = function () {
+        //打开空白窗口
+        // window.open();
+        //打开指定页面
+        // window.open("01-事件.html");
+        // window.open("http://www.baidu.com");
+        // 指定方式打开
+        // window.open("http://www.baidu.com", "_blank");
+        window.open("06-关闭窗口.html", "_bank");
+    }
+</script>
+
+</html>
