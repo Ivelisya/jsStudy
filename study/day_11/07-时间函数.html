@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时间函数</title>
+</head>
+
+<body>
+    <!-- 
+        setTimeout(function, delay): 在指定延迟（毫秒）后执行函数，返回一个ID。
+        clearTimeout(id):  取消对应的setTimeout()。
+
+        setInterval(function, delay): 每隔指定延迟（毫秒）重复执行函数，返回一个ID。
+        clearInterval(id): 取消对应的setInterval()。
+    -->
+    <button type="button" onclick="toBaidu()">3秒后跳转到百度</button>
+    <hr>
+    <button type="button" onclick="init()">开始</button>
+    <button type="button" onclick="stop()">暂停</button>
+    <h2 id="time"></h2>
+    <hr>
+    <button type="button" onclick="hello()"></button>
+</body>
+<script>
+    function toBaidu() {
+        setTimeout(test, 3000);
+    }
+    function test() {
+        window.open("https://www.baidu.com");
+    }
+    var id;
+    function init() {
+        var time = new Date().toLocaleTimeString();
+        document.getElementById("time").innerHTML = time;
+        id = setTimeout(init, 1000);
+    }
+    function stop() {
+        clearTimeout(id);
+    }
+    function hello() {
+        setInterva; (function () {
+            console.log("你好");
+        }, 1000);
+    }
+</script>
+
+</html>
