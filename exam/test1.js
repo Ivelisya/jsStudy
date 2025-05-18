@@ -9,6 +9,7 @@ class ShoppingCart {
             existing.quantity += quantity;
 
         } else {
+            
 
             this.#items.push({ product, quantity });
 
