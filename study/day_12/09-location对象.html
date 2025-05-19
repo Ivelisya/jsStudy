@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location对象</title>
+</head>
+<body>
+    <button type = "button" onclick = "test()">跳转</button>
+    <button type = "button" onclick = "test1()">替换</button>
+    <button type = "button" onclick = "test2()">刷新</button>
+
+</body>
+<!--
+location 对象的属性
+    href: 设置或返回完整的 URL
+
+location 对象的方法
+    reload(): 重新加载当前文档。
+    replace(): 用新的文档替换当前文档。(不可后退)
+-->
+    <script>
+        //获取当前访问的url
+        var url = window.location.href;
+        console.log(url);
+        function test(){
+            //跳转到指定的url
+            window.location.href = "https://www.baidu.com";
+        }
+        function test1(){
+            window.location.replace("https://www.baidu.com");
+        }
+        function test2(){
+            window.location.reload();
+        }
+    </script>
+</html>

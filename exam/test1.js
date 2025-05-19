@@ -9,10 +9,7 @@ class ShoppingCart {
             existing.quantity += quantity;
 
         } else {
-            
-
             this.#items.push({ product, quantity });
-
         }
 
     };
@@ -23,7 +20,7 @@ class ShoppingCart {
 
     };
 
-    getTotalPrice() {  
+    getTotalPrice() {
 
         return this.#items.reduce(
 
@@ -39,7 +36,7 @@ class ShoppingCart {
 
     getItems() {
 
-        return [...this.#items]; 
+        return [...this.#items];
 
     };
 
