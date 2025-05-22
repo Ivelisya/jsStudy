@@ -9,7 +9,9 @@ console.log(str2);
 var aa = 1, bb = 2, cc = 3;
 var str2;
 // console.log(bb, cc); // 1 2 3
-console.log(str2);
+console.log(
+    str2
+);
 
 var str = "你好";
 console.log(str); // 你好
