@@ -1,0 +1,70 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>获取节点</title>
+</head>
+<!--
+注意：操作 DOM 必须等节点初始化完毕后，才能执行。
+
+处理方式两种：
+    (1) 把 script 调用标签移到 html 末尾即可；
+    (2) 使用 onload 事件来处理 JS，等待 html 加载完毕再加载 onload 事件里的 JS。
+
+    getElementById()         根据 id 获取 dom 对象，如果 id 重复，那么以第一个为准
+    getElementsByTagName()   根据标签名获取 dom 对象数组
+    getElementsByClassName() 根据样式名获取 dom 对象数组
+    getElementsByName()      根据 name 属性值获取 dom 对象数组，常用于多选获取值
+-->
+
+<body>
+    <p id="p1" class="para">这是一个段落<span>文本</span></p>
+    <p id="p1" class="para">这又是一个段落</p>
+    <input type="text" name="txt" />
+    <input type="checkbox" name="hobby" value="游泳" />游泳
+    <input type="checkbox" name="hobby" value="篮球" />篮球
+    <input type="checkbox" name="hobby" value="足球" />足球
+    <hr />
+    <a href="javascript:void(0)" onclick="testById()">按照id获取</a>
+    <a href="javascript:void(0)" onclick="testByName()">按照name获取</a>
+    <a href="javascript:void(0)" onclick="testByTagName()">按照标签名获取</a>
+    <a href="javascript:void(0)" onclick="testByClass();">按照class获取</a>
+
+
+</body>
+<script>
+    //两个p标签都有id属性
+
+    //如果获取元素时有多个id相同的元素，以第一个为准
+    function testById() {
+        var p1 = document.getElementById("p1");
+        console.log(p1);
+    }
+    //按照name属性来获取
+    function testByName() {
+        var hobbys = document.getElementsByName("hobby");
+        console.log(hobbys[0]);//获取的数组
+    }   
+
+    function testByTagName() {                                                          
+        //获取所有的p标签
+        var inputs = document.getElementsByTagName("input");
+        console.log(inputs);
+        //获取元素类型
+        for (var i = 0; i < inputs.length; i++) {
+            console.log(inputs[i].type);  //input的类型
+            console.log(inputs[i].value);  //input的值
+            if(inputs[i].type == "checkbox") {
+                console.log(inputs[i].checked); //单选框复选框是否被选中
+            }
+        }
+    }
+    //获取class属性
+    function testByClass(){
+        var getElementsByClassName = document.getElementsByClassName("para");
+        console.log(getElementsByClassName);
+    }
+</script>
+
+</html>
