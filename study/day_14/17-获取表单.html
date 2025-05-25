@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id = "form1" name = "form1" method = "get"></form>
+    <form id = "form2" name = "form2" method = "get"></form>
+</body>
+<script>
+    var form1 = document.form1;
+    var form2 = document.form2;
+    console.log(form1);
+    console.log(form2);
+    //得到当前文档中的表单集合
+    var forms = document.forms;
+
+    var form3 = forms['form1'];
+    console.log(form3);
+    //取索引
+    var form4 = forms[0];
+
+</script>
+</html>

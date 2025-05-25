@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <!--
+创建节点
+    createElement()    创建一个新的节点, 需要传入节点的标签名称, 返回创建的元素对象
+    createTextNode()   创建一个文本节点, 可以传入文本内容
+    innerHTML          也能达到创建节点的效果, 直接添加到指定位置了
+
+插入节点
+    write()            将任意的字符串插入到文档中
+    appendChild()      向元素中添加新的子节点, 作为最后一个子节点
+    insertBefore()     向指定的已有的节点之前插入新的节点
+                        newItem: 要插入的节点
+                        existingItem: 参考节点  需要参考父节点
+-->
+    <body>
+        <button onclick="addPara();">添加段落</button>
+        <button onclick="addImg();">添加图片</button>
+        <button onclick="addTxt();">添加文本框</button>
+        <button onclick="addOptions()">添加选项</button>
+        <select name="music" id="musicSelect"></select>
+            <option value="-1">你心内的第一首歌</option>
+            <option value="0">南山南</option>
+            <option value="1">喜欢你</option>
+        </select>
+        <hr />
+        <div id="container"></div>
+    </body>
+
+    <script>
+        function addPara() {
+            // 推荐使用DOM方式
+            var p = document.createElement("p");
+            p.innerHTML = "这是一个段落";
+            var div = document.getElementById("container");
+            div.appendChild(p);
+        }
+
+        function addImg() {
+            var div = document.getElementById("container");
+            var img = document.createElement("img");
+            img.src = "https://www.baidu.com/img/bd_logo1.png";
+            img.width = 100;
+            img.height = 100;
+            div.appendChild(img);
+        }
+
+        function addTxt() {
+           /* var div = document.getElementById("container");
+            var inp = document.createElement("input");
+            inp.type = "text";
+            inp.value = "这是一个文本框";
+            div.appendChild(inp);
+        */
+            var div = document.getElementById("container");
+            var inp = "<input type='text' value='这是一个文本框' />";
+            div.innerHTML = div.innerHTML + inp;
+            }
+            //添加下拉框
+        function addOptions() {
+            var select =  document.getElementsByName("music")[0];
+            //创建下拉选项
+            var opt = document.createElement("option");
+            //设置文本和值
+            //opt.value = "2";
+            //opt.text = "岁月神偷";
+            //将选项添加到下拉框中
+            //select.appendChild(opt);
+
+            opt.value = "2";
+            opt.text = "青花瓷";
+            console.log(select.options);
+            select.options.add(opt);
+
+            var opt = '<option value="3">岁月神偷</option>';
+            select.innerHTML = select.innerHTML + opt;
+        }
+    </script>
+</html>

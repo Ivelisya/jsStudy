@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>获取input元素</title>
+    </head>
+    <body>
+        <form id="myform" name="myform" action="" method="get">
+            姓名:<input type="text" id="uname" name="uname" value="zs" /><br />
+            密码:<input
+                type="password"
+                id="upwd"
+                name="upwd"
+                value="1234"
+            /><br />
+            <input type="hidden" id="uno" name="uno" value="隐藏域" />
+            个人说明:<textarea name="intro"></textarea>
+            <button type="button" onclick="getTxt();">获取元素内容</button>
+        </form>
+    </body>
+    <!--
+    获取input元素
+    1)、通过id 获取: document.getElementById(元素id);
+    2)、通过form.名称形式获取:myform.元素名称; name属性值
+    3)、通过 name 获取:document.getElementsByName(name属性值)[索引] // 从0开始
+    4)、通过 tagName 数组: document.getElementsByTagName('input') [索引] // 从0开始
+  -->
+    <script>
+        function getTxt() {
+            //1.通过id获取
+            var nname = document.getElementById("uname").value;
+            console.log(nname);
+            
+            var myform = document.getElementById("myform");
+            var upwd = myform.upwd.value;
+            console.log(upwd);
+
+            var uno = document.getElementsByName("uno")[0].value;
+            console.log(uno);
+
+            var intro = document.getElementsByTagName("textarea")[0].value;
+            console.log(intro);
+        }
+    </script>
+</html>
