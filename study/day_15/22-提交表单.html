@@ -1,10 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang = "en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset = "UTF-8">
+    <title>提交表单</title>
 </head>
 <body>
-$END$
+    <form id = 'myform1' name = "myform2" action = "#" method = "get">
+        <!--通过js事件: sub()提交表单-->
+        姓名:<input type = "text" id = "uname"/>
+        <input type = "button" value = "提交表单1" onclick = "submitForm()"/>
+    </form>
+    <hr>
+    <form id = 'myform2' action = "http://www.baidu.com" method = "get">
+        姓名: <input type = "text" id = "uname2"/>
+        <input type = "submit" value = "提交表单" onclick = "return submitForm2()"/>
+    </form>
+
+
 </body>
+<!--
+(1) 使用普通button按钮+onclick事件+事件中编写代码:
+   获取表单.submit();
+
+(2) 使用submit按钮 + onclick="return 函数()" +函数编写代码:
+   最后必须返回: return true|false;
+
+(3) 使用submit按钮/图片提交按钮 + 表单onsubmit="return 函数();" +函数编写代码:
+   最后必须返回: return true|false;
+   -->
+<!--trim()去除字符串前后空格-->
+<script>
+    function submitForm() {
+        //提交表单
+        var uname = document.getElementById("uname").value;
+        if (uname.trim() == "" || uname == null) {
+            alert("请输入姓名");
+            return;
+        } else {
+            document.getElementById("myform1").submit();
+        }
+    }
+    
+    function submitForm2() {
+        //提交表单
+        var uname = document.getElementById("uname2").value;
+        if (uname.trim() == "" || uname == null) {
+            alert("请输入姓名");
+            return false; //阻止表单提交
+        } else {
+            return true; //允许表单提交
+        }
+    }
+</script>
 </html>

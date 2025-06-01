@@ -1,0 +1,49 @@
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 获取下拉选项
+        1.获取下拉框(id 属性值 name属性值 class属性值，元素)
+        2.获取下拉框被选中项的索引
+            下拉框对象 selectedindex
+        3.获取下拉框被选中项的值
+        4.获取被选中项的文本
+        5.获取下拉框的所有下拉选项
+        6.获取下拉框的所有选项
+            下拉框对象 options  
+    -->
+    <select id = "ufrom" name = "ufrom">
+        <option value = "-1">请选择</option>
+        <option value = "0" selected = "selected">北京</option>
+        <option value = "1">上海</option>
+        <option>深圳</option>
+    </select><br/>
+    <button type = "button" id = "sub">获取</button>
+</body>
+<script>
+    document.getElementById("sub").onclick = function () {
+        var ufrom = document.getElementById("ufrom");//获取下拉框
+        var selectoptions = ufrom.options;//获取下拉框的所有选项
+        console.log(selectoptions);
+        //获取下拉框被选中项的索引
+        var index = ufrom.selectedIndex;
+        console.log("被选中项的索引：" + index);
+        //获取下拉框被选中项的值
+        var val = selectoptions[index].value;
+        console.log("被选中项的值：" + val);
+        
+        //获取被选中项的文本
+        var text = selectoptions[index].text;
+        console.log("被选中项的文本：" + text);
+        //获取当前被选中的值有一个很简单的方式
+        var selectedValue = ufrom.value;
+        console.log("当前被选中的值：" + selectedValue);
+        
+        //设置下拉选项被选中
+        selectoptions[2].selected = true;
+    }
+</script>
+</html>
