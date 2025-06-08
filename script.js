@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    
     // 清除按钮功能
     quickDelete.addEventListener('click', function () {
         searchInput.value = '';
