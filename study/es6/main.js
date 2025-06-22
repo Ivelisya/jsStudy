@@ -6,6 +6,9 @@ setTimeout(() => {
 }, 0);
 console.log("任务3：..同步");
 
+const p1 = promise((resolve,reject) => {
+
+})
 //2.proxy
 
 //3.module
