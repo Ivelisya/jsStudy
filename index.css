@@ -6,6 +6,7 @@ body, html {
     font-size: 12px; /* 百度基础字号 */
     background-color: #fff;
 }
+
 #wrapper {
     position: relative; /* 相对定位基础 */
     min-height: 100vh; /* 至少撑满视窗高度 */
